@@ -1,9 +1,7 @@
 import React from 'react';
-import './App.css'
+import './App.scss'
 import photo from './photo.png'
-
-
-
+const sectionContent = require('./sectionContent');
 
 class SocialMediaButton extends React.Component{
   constructor(props){
@@ -68,12 +66,17 @@ class SocialMediaBar extends React.Component{
 class NameBanner extends React.Component {
   constructor(props){
     super(props);
+    this.state = {}
     this.title = props.title;
     this.subtitle = props.subtitle;
   }
+  getClassNames = (str,props) => {
+    let slideUp = props.hide ? "slide-up" : "";
+    return `${str} ${slideUp}`;
+  }
   render () {
     return (
-      <div className="name-banner">
+      <div className={this.getClassNames('name-banner', this.props)}>
         <h1 className="title-text no-padding">{this.title}</h1>
         <h1 className="subtitle-text no-padding">{this.subtitle}</h1>
         <SocialMediaBar />
@@ -94,27 +97,21 @@ class Photo extends React.Component{
     )
   }
 }
+
 class SectionLink extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {
-      activatedState: props.active,
-    }
+    this.state = {}
     this.text = `<${props.text}>`;
     this.filled = false;
     this.click = props.click;
     this.id = props.id;
+    this.active = props.active;
   }
 
-  componentWillReceiveProps(nextProps){
-    const activatedState = nextProps.active;
-    this.setState({activatedState:activatedState});
-  }
-
-
-  getClassNames = (name) => {
-    let activatedState = (() => {
-      switch(this.state.activatedState) {
+  getClassNames = (name, aState) => {
+    let activatedState = ((a) => {
+      switch(a) {
         case(0):
           return "";
         case(1):
@@ -124,7 +121,7 @@ class SectionLink extends React.Component{
         default:
           return "";
       }
-    })();
+    })(aState);
     return `${name}  ${activatedState}`;
   }
 
@@ -135,9 +132,41 @@ class SectionLink extends React.Component{
 
   render() {
     return (
-      <div className={this.getClassNames('section-link fill-up')}
+      <div className={this.getClassNames('section-link fill-up',this.props.active)}
         onClick={this.handleClick}>
         <span>{this.text}</span>
+        </div>
+    )
+  }
+}
+
+class ContentSection extends React.Component{
+  constructor(props){
+    super(props);
+    this.id = props.id;
+    this.content = props.content;
+  }
+
+  formatContent(json){
+    let i = 0;
+    let elementArray = json.map((j) => {
+      let el = React.createElement(j.key,{key:i},j.innerHTML);
+      i++;
+      return el;
+    })
+    return elementArray;
+  }
+
+  getClassNames = (names) => {
+    return `${names}`;
+  }
+
+  render() {
+    return (
+      <div 
+        className={this.getClassNames('content-section')}
+        id={this.id}>
+          {this.formatContent(this.content)}
         </div>
     )
   }
@@ -162,15 +191,22 @@ class App extends React.Component{
         }        
       },
       sectionHasBeenActivated:false,
+      activatedSection:undefined,
     }
+    this.sectionContent = sectionContent;
+  }
+
+  activateSection = (sectionName) => {
+    this.setState({activatedSection:sectionName});
   }
 
   clickSectionLink = (id) => {
     let s = this.state;
+    s.activatedSection = undefined;
     let sections =  s.sections;
     let i = 0;
     while (i in sections){
-      if (i == id) {
+      if (i === parseInt(id)) {
         sections[i].isActive = true;
       } else {
         sections[i].isActive = false;
@@ -178,7 +214,21 @@ class App extends React.Component{
       i++;
     }
     s.sectionHasBeenActivated = true;
+    
     this.setState(s);
+    setTimeout(() => {
+      s.activatedSection = id;
+      this.setState(s);
+    },1000)
+  }
+
+  createContentSection = () => {
+    const activeId = this.state.activatedSection;    
+    if (typeof activeId != 'undefined') {
+      const activeName = this.state.sections[activeId].name;
+      const contentJson = this.sectionContent[activeName];
+      return <ContentSection content={contentJson} />
+    }
   }
 
   createSectionLinks = () => {
@@ -200,7 +250,17 @@ class App extends React.Component{
         />
       elementArray.push(el);
     }
-    return elementArray;
+
+    const holderClassNames = (() => {
+      let padding = this.state.sectionHasBeenActivated ? "" : "padding-top-10";
+      let names = `section-link-holder ${padding}`;
+      return names;
+    })();
+    return (
+      <div className={holderClassNames}>
+        {elementArray}
+      </div>      
+      );
   }
 
   
@@ -209,10 +269,9 @@ class App extends React.Component{
       <div className="App">
         {/* <header className="App-header">
         </header> */} 
-        <div className="section-link-holder">
-          {this.createSectionLinks()}
-        </div>        
-        <NameBanner title="Dave Cook" subtitle="codes" />
+        {this.createSectionLinks()}
+        {this.createContentSection()}   
+        <NameBanner title="Dave Cook" subtitle="codes" hide={this.state.sectionHasBeenActivated} />
         <Photo src={photo} alt="Dave Cook" />
       </div>
     );

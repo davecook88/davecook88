@@ -1,0 +1,20 @@
+{
+    "about":[
+        {   "key": "p",
+            "innerHTML": "Born in the UK, currently working remotely in South-East Asia, I'm an all-round coder, web-designer and language teacher."
+        }, 
+        {
+            "key": "p",
+            "innerHTML": "As an avid language learner, I was drawn into the world of teaching English as a foreign language, in which I also completed a master's degree. However, I realised that in all of the places that I worked around the world, they all had one thing in common - a lack of technical know-how in the teams resulted in great inefficiencies, lost productivity and human error."
+        },
+        {
+            "key": "p",
+            "innerHTML": "Becoming frustrated by what I saw, and wanting to avoid these repetitive tasks myself, I began teaching myself to code - at first in VBA - in 2015. Now 5 years later, I have designed multiple websites, scripts, and web apps. This has allowed me to save businesses, and myself, time and money."
+        },
+        {
+            "key": "p",
+            "innerHTML": "I haven't turned my back on teaching. I continue to tutor individuals online and am open for new clients. Feel free to get in touch if you want to know more."
+        }
+    ]
+    
+}

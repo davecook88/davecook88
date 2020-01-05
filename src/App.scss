@@ -2,28 +2,50 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100i,800|Source+Sans+Pro  &display=swap');
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap');
 
+$bgColor:#040f15;
+$txtColor:#cdeee5;
+$accentColor:#35cc9d;
+
+$titleFont: 'Alegreya Sans SC', sans-serif;
+$txtFont: 'Major Mono Display', monospace;
+
+@mixin transition($str) {
+  -webkit-transition: #{$str};
+  -moz-transition: #{$str};
+  -ms-transition: #{$str};
+  -o-transition: #{$str};
+  transition: #{$str};      
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
 html,
 body {
     height: 100%;
-    max-height: 100%;
+    max-height: 100vh;
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 0;
     text-align: left;
-    font-family:    'Alegreya Sans SC', sans-serif;
+    font-family: monospace;
 }
 a {
-  color:#cdeee5;
+  color:$txtColor;
   text-decoration: none;
 }
 h1 {
-  font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: $titleFont;
 }
 .App {
   text-align: center;
-  background-color: #040f15;
-  color:#cdeee5;
+  background-color: $bgColor;
+  color:$txtColor;
   height:100vh;
 }
 
@@ -36,46 +58,73 @@ h1 {
   position: absolute;
   width: 60vw;
   right: 0;
+  top:0;
   font-size: 4em;
-  height: 100%;
-  padding: 25vh 5vw
+  height: 75vh;
+  padding: 25vh 5vw 0 0;
+  @include transition('top 1.5s linear');
 }
 .name-banner > h1 {
   line-height: 0.5em;
   letter-spacing: -12px;
   position: relative;
-  text-shadow: 4px -4px #040f15;
+  text-shadow: 4px -4px $bgColor;
+}
+.slide-up{
+  top:-100vh;
 }
 .no-padding{
   padding:0;
   margin: 0;
 }
+.padding-top-10 {
+  padding: 10% 0;
+}
+// All of this is to style and animate the section links
+// Ensure this number is the same as the number of links
+$elements: 5;
+$linkHeight: 15vh;
+@for $i from 0 to $elements {
+  .section-link:nth-child(#{$i + 1}) {
+     top: (4 + $i * $linkHeight);
+  }
+}
 .section-link-holder {
   position: absolute;
-  width: 33vw;
+  width: 25vw;
   left: 0;
-  height:100vh;
   vertical-align: middle;
-  padding: 10% 0;
-  transition:         left 0.3s ease-in;
-  -o-transition:      left 0.3s ease-in;
-  -ms-transition:     left 0.3s ease-in;
-  -moz-transition:    left 0.3s ease-in;
-  -webkit-transition: left 0.3s ease-in;
 }
 .section-link {
-  position: relative;
-  padding: 0.5em 0.2em;
-  font-size: 2em;
+  position: absolute;
+  width: inherit;
+  padding: 1vh 0.2em;
+  font-size: 5vh;
   border-bottom: 1px solid #cdeee5;
   border-right: 1px solid #cdeee5;
-  font-family:'Major Mono Display', monospace;
-  margin:1em;
+  font-family:$txtFont;
   overflow: hidden;
+  @include transition('left 0.3s ease-in');
+  @include animation('width 0.8s ease-in');
+  @include transition('all 0.8s ease-in');
+
+}
+
+.section-link.active {
+  top: 0;
+}
+
+.section-link.inactive {
+  font-size: 1em;
+  width:15vw;
+}
+@for $i from 0 to $elements {
+  .section-link.inactive:nth-child(#{$i + 1}) {
+     top: (60vh + $i * ($linkHeight / 2));
+  }
 }
 .section-link > span{
-  position: inherit;
-  color: top 0.5s ease-in;
+  position: relative;
 }
 .fill-up:before {
   content: "";
@@ -89,20 +138,20 @@ h1 {
   -webkit-transition: left 0.3s ease-in;
 }
 .section-link:hover{
-  color:#040f15;
+  color:$bgColor;
 }
 .fill-up:hover:before {
   left: 0;
 }
 .subtitle-text{
   font-style: italic;
-  color:#35cc9d;
-  font-family:'Major Mono Display', monospace;
+  color: $accentColor;
+  font-family:$txtFont;
   z-index: 3;
   font-weight: 100;
 }
 .title-text{
-  color:#cdeee5;
+  color:$txtColor;
   z-index: 2;
 }
 
@@ -127,6 +176,33 @@ h1 {
   top:-5vh;
 }
 
+.content-section {
+  position: relative;
+  width: 80vw;
+  margin: auto;
+  text-align: left;
+  top: 15vh;
+  height:50vh;
+  overflow: hidden;
+}
+
+.content-section > p {
+  overflow: hidden;
+  animation: 
+    typing 2s steps(30, end),
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color:$accentColor }
+}
+
 
 
 @media (prefers-reduced-motion: no-preference) {
@@ -146,7 +222,7 @@ h1 {
 }
 
 .App-link {
-  color: #61dafb;
+  color: $txtColor;
 }
 
 @-moz-keyframes spin {
