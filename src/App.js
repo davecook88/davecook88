@@ -97,25 +97,47 @@ class Photo extends React.Component{
 class SectionLink extends React.Component{
   constructor(props) {
     super(props);
+    this.state = {
+      activatedState: props.active,
+    }
     this.text = `<${props.text}>`;
-    this.activated = false;
     this.filled = false;
+    this.click = props.click;
+    this.id = props.id;
   }
 
-  activate = () => {
-    this.active = true;
+  componentWillReceiveProps(nextProps){
+    const activatedState = nextProps.active;
+    this.setState({activatedState:activatedState});
   }
+
 
   getClassNames = (name) => {
-    return `${name}  ${this.activated ? "activated" : ""}`;
+    let activatedState = (() => {
+      switch(this.state.activatedState) {
+        case(0):
+          return "";
+        case(1):
+          return "inactive";
+        case(2):
+          return "active";
+        default:
+          return "";
+      }
+    })();
+    return `${name}  ${activatedState}`;
+  }
+
+  handleClick = () => {
+    this.click(this.id);
   }
 
 
   render() {
     return (
-      <div className={this.getClassNames('section-link fill-up')}>
+      <div className={this.getClassNames('section-link fill-up')}
+        onClick={this.handleClick}>
         <span>{this.text}</span>
-        {/* <div className={this.getClassNames('fill-up')}></div> */}
         </div>
     )
   }
@@ -125,26 +147,62 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      sections: [
-        'about',
-        'projects',
-        'contact'
-      ],
-      activatedSection: undefined,
+      sections: {
+        0:{
+          name:'about',
+          isActive:false
+        },
+        1:{
+          name:'projects',
+          isActive:false
+        },
+        2:{
+          name:'contact',
+          isActive:false
+        }        
+      },
+      sectionHasBeenActivated:false,
     }
+  }
+
+  clickSectionLink = (id) => {
+    let s = this.state;
+    let sections =  s.sections;
+    let i = 0;
+    while (i in sections){
+      if (i == id) {
+        sections[i].isActive = true;
+      } else {
+        sections[i].isActive = false;
+      }
+      i++;
+    }
+    s.sectionHasBeenActivated = true;
+    this.setState(s);
   }
 
   createSectionLinks = () => {
     let elementArray = [];
-    let sections = this.state.sections;
+    let sections = Object.keys(this.state.sections);
     for (let i = 0; i < sections.length; i++){
-      let currentSection = sections[i];
-      let isActive = (i === this.activatedSection) ? true : false;
-      let el = <SectionLink key={i} text={currentSection} active={isActive} />
+      let currentSection = this.state.sections[sections[i]];
+      let activatedState = ((currentSection) => {
+        if (currentSection.isActive) return 2;
+        if (!(currentSection.isActive) && this.state.sectionHasBeenActivated) return 1;
+        return 0;
+      })(currentSection);
+      let el = <SectionLink 
+        key={i} 
+        id={i}
+        text={currentSection.name} 
+        active={activatedState} 
+        click={this.clickSectionLink}
+        />
       elementArray.push(el);
     }
     return elementArray;
   }
+
   
   render() {
     return (
@@ -161,15 +219,5 @@ class App extends React.Component{
   }
 }
 
-// function App() {
-//   return (
-//     <div className="App">
-//       {/* <header className="App-header">
-//       </header> */} 
-//       <NameBanner title="Dave Cook" subtitle="codes" />
-//       <Photo src={photo} alt="Dave Cook" />
-//     </div>
-//   );
-// }
 
 export default App;
