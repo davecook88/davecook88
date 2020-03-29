@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/davecook88/static/css/main.dc001ae1.chunk.css",
-    "main.js": "/davecook88/static/js/main.09dc3b7c.chunk.js",
-    "main.js.map": "/davecook88/static/js/main.09dc3b7c.chunk.js.map",
+    "main.css": "/davecook88/static/css/main.bdb09a45.chunk.css",
+    "main.js": "/davecook88/static/js/main.fc517613.chunk.js",
+    "main.js.map": "/davecook88/static/js/main.fc517613.chunk.js.map",
     "runtime-main.js": "/davecook88/static/js/runtime-main.8e80029f.js",
     "runtime-main.js.map": "/davecook88/static/js/runtime-main.8e80029f.js.map",
     "static/css/2.2623327d.chunk.css": "/davecook88/static/css/2.2623327d.chunk.css",
-    "static/js/2.5770387e.chunk.js": "/davecook88/static/js/2.5770387e.chunk.js",
-    "static/js/2.5770387e.chunk.js.map": "/davecook88/static/js/2.5770387e.chunk.js.map",
+    "static/js/2.e977bca7.chunk.js": "/davecook88/static/js/2.e977bca7.chunk.js",
+    "static/js/2.e977bca7.chunk.js.map": "/davecook88/static/js/2.e977bca7.chunk.js.map",
     "index.html": "/davecook88/index.html",
-    "precache-manifest.3b6acff399d9f61e611ba56ab62b0bbc.js": "/davecook88/precache-manifest.3b6acff399d9f61e611ba56ab62b0bbc.js",
+    "precache-manifest.fb9dad39c2813cc7c0bcc68e78cf130f.js": "/davecook88/precache-manifest.fb9dad39c2813cc7c0bcc68e78cf130f.js",
     "service-worker.js": "/davecook88/service-worker.js",
     "static/css/2.2623327d.chunk.css.map": "/davecook88/static/css/2.2623327d.chunk.css.map",
-    "static/css/main.dc001ae1.chunk.css.map": "/davecook88/static/css/main.dc001ae1.chunk.css.map",
-    "static/js/2.5770387e.chunk.js.LICENSE.txt": "/davecook88/static/js/2.5770387e.chunk.js.LICENSE.txt",
+    "static/css/main.bdb09a45.chunk.css.map": "/davecook88/static/css/main.bdb09a45.chunk.css.map",
+    "static/js/2.e977bca7.chunk.js.LICENSE.txt": "/davecook88/static/js/2.e977bca7.chunk.js.LICENSE.txt",
     "static/media/lakarencita.PNG": "/davecook88/static/media/lakarencita.55f2ea90.PNG",
     "static/media/snakegif.gif": "/davecook88/static/media/snakegif.9b0a099a.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.8e80029f.js",
     "static/css/2.2623327d.chunk.css",
-    "static/js/2.5770387e.chunk.js",
-    "static/css/main.dc001ae1.chunk.css",
-    "static/js/main.09dc3b7c.chunk.js"
+    "static/js/2.e977bca7.chunk.js",
+    "static/css/main.bdb09a45.chunk.css",
+    "static/js/main.fc517613.chunk.js"
   ]
 }
