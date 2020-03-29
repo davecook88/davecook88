@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/davecook88/davecook88/static/css/main.dc001ae1.chunk.css",
-    "main.js": "/davecook88/davecook88/static/js/main.55e4fc2b.chunk.js",
-    "main.js.map": "/davecook88/davecook88/static/js/main.55e4fc2b.chunk.js.map",
-    "runtime-main.js": "/davecook88/davecook88/static/js/runtime-main.08371439.js",
-    "runtime-main.js.map": "/davecook88/davecook88/static/js/runtime-main.08371439.js.map",
-    "static/js/2.e73999d8.chunk.js": "/davecook88/davecook88/static/js/2.e73999d8.chunk.js",
-    "static/js/2.e73999d8.chunk.js.map": "/davecook88/davecook88/static/js/2.e73999d8.chunk.js.map",
-    "index.html": "/davecook88/davecook88/index.html",
-    "precache-manifest.ce82b16b4d5832ed7794759c6ab3a558.js": "/davecook88/davecook88/precache-manifest.ce82b16b4d5832ed7794759c6ab3a558.js",
-    "service-worker.js": "/davecook88/davecook88/service-worker.js",
-    "static/css/main.dc001ae1.chunk.css.map": "/davecook88/davecook88/static/css/main.dc001ae1.chunk.css.map",
-    "static/js/2.e73999d8.chunk.js.LICENSE.txt": "/davecook88/davecook88/static/js/2.e73999d8.chunk.js.LICENSE.txt",
-    "static/media/lakarencita.PNG": "/davecook88/davecook88/static/media/lakarencita.55f2ea90.PNG",
-    "static/media/snakegif.gif": "/davecook88/davecook88/static/media/snakegif.9b0a099a.gif"
+    "main.css": "/davecook88/static/css/main.dc001ae1.chunk.css",
+    "main.js": "/davecook88/static/js/main.79eb3612.chunk.js",
+    "main.js.map": "/davecook88/static/js/main.79eb3612.chunk.js.map",
+    "runtime-main.js": "/davecook88/static/js/runtime-main.8e80029f.js",
+    "runtime-main.js.map": "/davecook88/static/js/runtime-main.8e80029f.js.map",
+    "static/js/2.e73999d8.chunk.js": "/davecook88/static/js/2.e73999d8.chunk.js",
+    "static/js/2.e73999d8.chunk.js.map": "/davecook88/static/js/2.e73999d8.chunk.js.map",
+    "index.html": "/davecook88/index.html",
+    "precache-manifest.ddfcc5d16f10052abf731b8c5a37d1ad.js": "/davecook88/precache-manifest.ddfcc5d16f10052abf731b8c5a37d1ad.js",
+    "service-worker.js": "/davecook88/service-worker.js",
+    "static/css/main.dc001ae1.chunk.css.map": "/davecook88/static/css/main.dc001ae1.chunk.css.map",
+    "static/js/2.e73999d8.chunk.js.LICENSE.txt": "/davecook88/static/js/2.e73999d8.chunk.js.LICENSE.txt",
+    "static/media/lakarencita.PNG": "/davecook88/static/media/lakarencita.55f2ea90.PNG",
+    "static/media/snakegif.gif": "/davecook88/static/media/snakegif.9b0a099a.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.08371439.js",
+    "static/js/runtime-main.8e80029f.js",
     "static/js/2.e73999d8.chunk.js",
     "static/css/main.dc001ae1.chunk.css",
-    "static/js/main.55e4fc2b.chunk.js"
+    "static/js/main.79eb3612.chunk.js"
   ]
 }
