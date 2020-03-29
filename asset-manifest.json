@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/davecook88/davecook88/static/css/main.bdb09a45.chunk.css",
-    "main.js": "/davecook88/davecook88/static/js/main.b5e43285.chunk.js",
-    "main.js.map": "/davecook88/davecook88/static/js/main.b5e43285.chunk.js.map",
+    "main.css": "/davecook88/davecook88/static/css/main.dc001ae1.chunk.css",
+    "main.js": "/davecook88/davecook88/static/js/main.681a3e91.chunk.js",
+    "main.js.map": "/davecook88/davecook88/static/js/main.681a3e91.chunk.js.map",
     "runtime-main.js": "/davecook88/davecook88/static/js/runtime-main.08371439.js",
     "runtime-main.js.map": "/davecook88/davecook88/static/js/runtime-main.08371439.js.map",
     "static/css/2.2623327d.chunk.css": "/davecook88/davecook88/static/css/2.2623327d.chunk.css",
-    "static/js/2.e977bca7.chunk.js": "/davecook88/davecook88/static/js/2.e977bca7.chunk.js",
-    "static/js/2.e977bca7.chunk.js.map": "/davecook88/davecook88/static/js/2.e977bca7.chunk.js.map",
+    "static/js/2.5770387e.chunk.js": "/davecook88/davecook88/static/js/2.5770387e.chunk.js",
+    "static/js/2.5770387e.chunk.js.map": "/davecook88/davecook88/static/js/2.5770387e.chunk.js.map",
     "index.html": "/davecook88/davecook88/index.html",
-    "precache-manifest.a74e13730b8a1a5eb3e7309293872bac.js": "/davecook88/davecook88/precache-manifest.a74e13730b8a1a5eb3e7309293872bac.js",
+    "precache-manifest.f28b80c582782432e99812900b9a2332.js": "/davecook88/davecook88/precache-manifest.f28b80c582782432e99812900b9a2332.js",
     "service-worker.js": "/davecook88/davecook88/service-worker.js",
     "static/css/2.2623327d.chunk.css.map": "/davecook88/davecook88/static/css/2.2623327d.chunk.css.map",
-    "static/css/main.bdb09a45.chunk.css.map": "/davecook88/davecook88/static/css/main.bdb09a45.chunk.css.map",
-    "static/js/2.e977bca7.chunk.js.LICENSE.txt": "/davecook88/davecook88/static/js/2.e977bca7.chunk.js.LICENSE.txt",
+    "static/css/main.dc001ae1.chunk.css.map": "/davecook88/davecook88/static/css/main.dc001ae1.chunk.css.map",
+    "static/js/2.5770387e.chunk.js.LICENSE.txt": "/davecook88/davecook88/static/js/2.5770387e.chunk.js.LICENSE.txt",
     "static/media/lakarencita.PNG": "/davecook88/davecook88/static/media/lakarencita.55f2ea90.PNG",
     "static/media/snakegif.gif": "/davecook88/davecook88/static/media/snakegif.9b0a099a.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.08371439.js",
     "static/css/2.2623327d.chunk.css",
-    "static/js/2.e977bca7.chunk.js",
-    "static/css/main.bdb09a45.chunk.css",
-    "static/js/main.b5e43285.chunk.js"
+    "static/js/2.5770387e.chunk.js",
+    "static/css/main.dc001ae1.chunk.css",
+    "static/js/main.681a3e91.chunk.js"
   ]
 }
