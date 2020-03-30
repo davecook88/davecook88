@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0e1e5e09d89fe9069e6367b35307c520",
+    "revision": "bea38302d6af0a479f25f73a2aac4411",
     "url": "/davecook88/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/davecook88/static/css/2.2623327d.chunk.css"
   },
   {
-    "revision": "2679d83a79a4fb060559",
+    "revision": "0163bcecf4addfde190a",
     "url": "/davecook88/static/css/main.27c41edf.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/davecook88/static/js/2.e977bca7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2679d83a79a4fb060559",
-    "url": "/davecook88/static/js/main.33840bef.chunk.js"
+    "revision": "0163bcecf4addfde190a",
+    "url": "/davecook88/static/js/main.4effd9c6.chunk.js"
   },
   {
     "revision": "37f248f5c0ca74b381a3",
