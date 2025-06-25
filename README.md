@@ -1,3 +1,5 @@
+![Hero Image](https://raw.githubusercontent.com/davecook88/davecook88/refs/heads/main/public/readme-hero.png)
+
 ## Hi there 👋
 
 <!--
