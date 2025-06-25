@@ -3,9 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dave Cook - Software Engineer</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <meta name="description" content="Dave Cook - Senior Software Engineer specializing in full-stack development, cloud architecture, and AI integration.">
 </head>
-<body>
+<body class="bg-black text-white font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-sm border-b border-accent-500/20 z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <span class="text-xl font-semibold tracking-tight text-accent-400">Dave Cook</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link nav-link-active border-b-2 border-accent-500">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-4xl">
+                <div class="mb-12">
+                    <img src="https://raw.githubusercontent.com/davecook88/davecook88/refs/heads/main/public/readme-hero.png" 
+                         alt="Dave Cook" 
+                         class="w-full max-w-3xl h-auto opacity-90">
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-light text-white mb-8 tracking-tight leading-tight">
+                    Software Engineer
+                    <span class="block text-accent-400 text-4xl md:text-5xl mt-4 font-light">Building the Future</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-primary-300 mb-12 leading-relaxed font-light max-w-3xl">
+                    Building scalable systems and intelligent applications. 
+                    Specializing in modern web technologies, <span class="text-accent-400">cloud infrastructure</span>, and <span class="text-accent-400">AI integration</span>.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="projects.html" class="btn-primary inline-block text-center">
+                        View Work
+                    </a>
+                    <a href="contact.html" class="btn-secondary inline-block text-center">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Focus -->
+    <section class="py-20 border-t border-accent-500/20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-4xl">
+                <h2 class="section-title">Current Focus</h2>
+                
+                <div class="card p-8 rounded-none border-l-4 border-accent-500">
+                    <h3 class="text-2xl font-medium text-white mb-6 tracking-tight">
+                        AI-Powered Enterprise Applications
+                    </h3>
+                    
+                    <p class="text-lg text-primary-300 leading-relaxed mb-8 font-light">
+                        Developing intelligent web applications that integrate <span class="text-accent-400">OpenAI, Gemini, and Claude APIs</span> 
+                        with robust backend systems. Currently architecting scalable solutions using Next.js, 
+                        FastAPI, and enterprise-grade cloud infrastructure.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tech-badge bg-accent-900/30 border-accent-500/50 text-accent-300">Next.js</span>
+                        <span class="tech-badge bg-blue-900/30 border-blue-500/50 text-blue-300">FastAPI</span>
+                        <span class="tech-badge bg-purple-900/30 border-purple-500/50 text-purple-300">TypeScript</span>
+                        <span class="tech-badge bg-orange-900/30 border-orange-500/50 text-orange-300">AWS</span>
+                        <span class="tech-badge bg-green-900/30 border-green-500/50 text-green-300">OpenAI</span>
+                        <span class="tech-badge bg-indigo-900/30 border-indigo-500/50 text-indigo-300">Terraform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Technologies -->
+    <section class="py-20 border-t border-accent-500/20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 class="section-title">Core Technologies</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-none border-l-2 border-accent-500 hover:border-l-4 transition-all">
+                    <h3 class="text-lg font-medium text-white mb-4 tracking-tight">Frontend</h3>
+                    <div class="space-y-2 text-primary-400 font-mono text-sm">
+                        <div class="hover:text-accent-400 transition-colors cursor-default">React / Next.js</div>
+                        <div class="hover:text-accent-400 transition-colors cursor-default">TypeScript</div>
+                        <div class="hover:text-accent-400 transition-colors cursor-default">Tailwind CSS</div>
+                    </div>
+                </div>
+                
+                <div class="card p-6 rounded-none border-l-2 border-blue-500 hover:border-l-4 transition-all">
+                    <h3 class="text-lg font-medium text-white mb-4 tracking-tight">Backend</h3>
+                    <div class="space-y-2 text-primary-400 font-mono text-sm">
+                        <div class="hover:text-blue-400 transition-colors cursor-default">Node.js / Express</div>
+                        <div class="hover:text-blue-400 transition-colors cursor-default">Python / FastAPI</div>
+                        <div class="hover:text-blue-400 transition-colors cursor-default">GraphQL / REST</div>
+                    </div>
+                </div>
+                
+                <div class="card p-6 rounded-none border-l-2 border-purple-500 hover:border-l-4 transition-all">
+                    <h3 class="text-lg font-medium text-white mb-4 tracking-tight">Infrastructure</h3>
+                    <div class="space-y-2 text-primary-400 font-mono text-sm">
+                        <div class="hover:text-purple-400 transition-colors cursor-default">AWS / GCP</div>
+                        <div class="hover:text-purple-400 transition-colors cursor-default">Docker / Kubernetes</div>
+                        <div class="hover:text-purple-400 transition-colors cursor-default">Terraform</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Work -->
+    <section class="py-20 border-t border-primary-900/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="section-title mb-0">Selected Work</h2>
+                <a href="projects.html" class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                    View All →
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="card p-8 rounded-none group">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-xl font-medium text-white tracking-tight">
+                            Enterprise AI Chat Platform
+                        </h3>
+                        <span class="text-primary-500 text-sm font-mono">2024</span>
+                    </div>
+                    
+                    <p class="text-primary-300 mb-6 leading-relaxed font-light">
+                        Scalable chat application with intelligent response generation, 
+                        real-time messaging, and enterprise security features.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">OpenAI</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                    </div>
+                    
+                    <a href="#" class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                        View Project →
+                    </a>
+                </div>
+                
+                <div class="card p-8 rounded-none group">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-xl font-medium text-white tracking-tight">
+                            Cloud Infrastructure Automation
+                        </h3>
+                        <span class="text-primary-500 text-sm font-mono">2024</span>
+                    </div>
+                    
+                    <p class="text-primary-300 mb-6 leading-relaxed font-light">
+                        Infrastructure as Code solution for automated deployment, 
+                        scaling, and monitoring of containerized applications.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tech-badge">Terraform</span>
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">Kubernetes</span>
+                        <span class="tech-badge">Docker</span>
+                    </div>
+                    
+                    <a href="#" class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                        View Project →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-primary-900/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="mb-8 md:mb-0">
+                    <span class="text-primary-400 font-medium tracking-wide">Dave Cook</span>
+                    <p class="text-primary-500 mt-2 font-light">Software Engineer</p>
+                </div>
+                
+                <div class="flex space-x-8">
+                    <a href="https://linkedin.com/in/david-cook-a1549ba2" 
+                       target="_blank"
+                       class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/davecook88" 
+                       target="_blank"
+                       class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                        GitHub
+                    </a>
+                    <a href="mailto:dave@mamalon.dev" 
+                       class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

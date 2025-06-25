@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Dave Cook</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <meta name="description" content="Projects by Dave Cook - Software engineering solutions and applications.">
+</head>
+<body class="bg-black text-white font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-sm border-b border-primary-900/30 z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-semibold tracking-tight hover:text-primary-300 transition-colors">Dave Cook</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="projects.html" class="nav-link nav-link-active">Projects</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Hero -->
+    <section class="pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl md:text-7xl font-light text-white mb-8 tracking-tight leading-tight">
+                    Selected Work
+                </h1>
+                <p class="text-xl md:text-2xl text-primary-300 leading-relaxed font-light">
+                    Applications and systems built with modern technologies, focusing on scalability, 
+                    performance, and user experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="pb-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="space-y-16">
+                
+                <!-- Project 1 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="card p-8 md:p-12 rounded-none">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-medium text-white tracking-tight">
+                                Enterprise AI Chat Platform
+                            </h3>
+                            <span class="text-primary-500 text-sm font-mono">2024</span>
+                        </div>
+                        
+                        <p class="text-lg text-primary-300 mb-8 leading-relaxed font-light">
+                            Scalable chat application with intelligent response generation, real-time messaging, 
+                            and enterprise security features. Built to handle thousands of concurrent users 
+                            with sub-second response times.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="text-sm font-medium text-primary-400 mb-2">Key Features</div>
+                                <ul class="text-primary-300 space-y-1 font-light">
+                                    <li>• Real-time messaging with WebSocket connections</li>
+                                    <li>• AI-powered response generation and context awareness</li>
+                                    <li>• Role-based access control and audit logging</li>
+                                    <li>• Horizontal scaling with load balancing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">OpenAI</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">Redis</span>
+                            <span class="tech-badge">Docker</span>
+                        </div>
+                        
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                                View Demo →
+                            </a>
+                            <a href="#" class="text-primary-500 hover:text-primary-400 transition-colors font-medium tracking-wide">
+                                Documentation →
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary-950/20 border border-primary-900/30 aspect-video flex items-center justify-center">
+                        <span class="text-primary-500 font-mono text-sm">Project Screenshot</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="bg-primary-950/20 border border-primary-900/30 aspect-video flex items-center justify-center lg:order-1">
+                        <span class="text-primary-500 font-mono text-sm">Project Screenshot</span>
+                    </div>
+                    
+                    <div class="card p-8 md:p-12 rounded-none lg:order-2">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-medium text-white tracking-tight">
+                                Cloud Infrastructure Automation
+                            </h3>
+                            <span class="text-primary-500 text-sm font-mono">2024</span>
+                        </div>
+                        
+                        <p class="text-lg text-primary-300 mb-8 leading-relaxed font-light">
+                            Infrastructure as Code solution for automated deployment, scaling, and monitoring 
+                            of containerized applications. Reduces deployment time from hours to minutes 
+                            while ensuring consistency across environments.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="text-sm font-medium text-primary-400 mb-2">Key Features</div>
+                                <ul class="text-primary-300 space-y-1 font-light">
+                                    <li>• Automated infrastructure provisioning with Terraform</li>
+                                    <li>• Container orchestration with Kubernetes</li>
+                                    <li>• CI/CD pipelines with automated testing</li>
+                                    <li>• Comprehensive monitoring and alerting</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="tech-badge">Terraform</span>
+                            <span class="tech-badge">AWS</span>
+                            <span class="tech-badge">Kubernetes</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">GitHub Actions</span>
+                            <span class="tech-badge">Monitoring</span>
+                        </div>
+                        
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                                Repository →
+                            </a>
+                            <a href="#" class="text-primary-500 hover:text-primary-400 transition-colors font-medium tracking-wide">
+                                Architecture →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="card p-8 md:p-12 rounded-none">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-medium text-white tracking-tight">
+                                Data Analytics Platform
+                            </h3>
+                            <span class="text-primary-500 text-sm font-mono">2023</span>
+                        </div>
+                        
+                        <p class="text-lg text-primary-300 mb-8 leading-relaxed font-light">
+                            Interactive dashboard for data visualization with real-time charts, advanced filtering, 
+                            and export capabilities. Processes millions of data points with optimized queries 
+                            and efficient caching strategies.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="text-sm font-medium text-primary-400 mb-2">Key Features</div>
+                                <ul class="text-primary-300 space-y-1 font-light">
+                                    <li>• Real-time data visualization and analytics</li>
+                                    <li>• Advanced filtering and data exploration tools</li>
+                                    <li>• Automated report generation and scheduling</li>
+                                    <li>• High-performance data processing pipeline</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">D3.js</span>
+                            <span class="tech-badge">Redis</span>
+                            <span class="tech-badge">Python</span>
+                        </div>
+                        
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                                Live Demo →
+                            </a>
+                            <a href="#" class="text-primary-500 hover:text-primary-400 transition-colors font-medium tracking-wide">
+                                Case Study →
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary-950/20 border border-primary-900/30 aspect-video flex items-center justify-center">
+                        <span class="text-primary-500 font-mono text-sm">Project Screenshot</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="bg-primary-950/20 border border-primary-900/30 aspect-video flex items-center justify-center lg:order-1">
+                        <span class="text-primary-500 font-mono text-sm">Project Screenshot</span>
+                    </div>
+                    
+                    <div class="card p-8 md:p-12 rounded-none lg:order-2">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-medium text-white tracking-tight">
+                                API Gateway & Microservices
+                            </h3>
+                            <span class="text-primary-500 text-sm font-mono">2023</span>
+                        </div>
+                        
+                        <p class="text-lg text-primary-300 mb-8 leading-relaxed font-light">
+                            Scalable microservices architecture with API gateway, service discovery, 
+                            and centralized authentication. Handles high-throughput requests with 
+                            automatic scaling and fault tolerance.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="text-sm font-medium text-primary-400 mb-2">Key Features</div>
+                                <ul class="text-primary-300 space-y-1 font-light">
+                                    <li>• Microservices with independent deployment</li>
+                                    <li>• API gateway with rate limiting and caching</li>
+                                    <li>• Service mesh for inter-service communication</li>
+                                    <li>• Distributed tracing and logging</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">GraphQL</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Kubernetes</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">Redis</span>
+                        </div>
+                        
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                                Architecture →
+                            </a>
+                            <a href="#" class="text-primary-500 hover:text-primary-400 transition-colors font-medium tracking-wide">
+                                Documentation →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 border-t border-primary-900/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-4xl">
+                <h2 class="text-3xl font-medium text-white mb-6 tracking-tight">
+                    Interested in Working Together?
+                </h2>
+                <p class="text-lg text-primary-300 mb-8 leading-relaxed font-light">
+                    I'm always open to discussing new projects, opportunities, and interesting challenges.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html" class="btn-primary inline-block text-center">
+                        Start a Conversation
+                    </a>
+                    <a href="https://github.com/davecook88" target="_blank" class="btn-secondary inline-block text-center">
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-primary-900/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="mb-8 md:mb-0">
+                    <span class="text-primary-400 font-medium tracking-wide">Dave Cook</span>
+                    <p class="text-primary-500 mt-2 font-light">Software Engineer</p>
+                </div>
+                
+                <div class="flex space-x-8">
+                    <a href="https://linkedin.com/in/david-cook-a1549ba2" 
+                       target="_blank"
+                       class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/davecook88" 
+                       target="_blank"
+                       class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                        GitHub
+                    </a>
+                    <a href="mailto:dave@mamalon.dev" 
+                       class="text-primary-400 hover:text-primary-300 transition-colors font-medium tracking-wide">
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-slate-900/80 backdrop-blur-sm border-b border-slate-700 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-primary-500">Dave Cook</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="about.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="projects.html" class="text-white bg-primary-600 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="contact.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Hero -->
+    <section class="pt-24 pb-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6">My Projects</h1>
+                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    A showcase of applications and solutions I've built using modern technologies
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="pb-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="bg-slate-900/50 rounded-xl border border-slate-700 overflow-hidden hover:border-primary-500 transition-colors group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">AI Chat Application</h3>
+                            <div class="text-2xl">🤖</div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            A modern chat application powered by OpenAI's GPT models with real-time messaging and intelligent responses.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600/20 text-blue-300 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-black text-white px-2 py-1 rounded text-xs">Next.js</span>
+                            <span class="bg-purple-600/20 text-purple-300 px-2 py-1 rounded text-xs">OpenAI API</span>
+                            <span class="bg-cyan-600/20 text-cyan-300 px-2 py-1 rounded text-xs">Tailwind</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors">
+                                Live Demo →
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gray-300 text-sm font-medium transition-colors">
+                                GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-slate-900/50 rounded-xl border border-slate-700 overflow-hidden hover:border-primary-500 transition-colors group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">E-commerce Platform</h3>
+                            <div class="text-2xl">🛒</div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Full-stack e-commerce solution with payment processing, inventory management, and admin dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-black text-white px-2 py-1 rounded text-xs">Next.js</span>
+                            <span class="bg-blue-700/20 text-blue-300 px-2 py-1 rounded text-xs">TypeScript</span>
+                            <span class="bg-blue-600/20 text-blue-300 px-2 py-1 rounded text-xs">PostgreSQL</span>
+                            <span class="bg-orange-600/20 text-orange-300 px-2 py-1 rounded text-xs">AWS</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors">
+                                Live Demo →
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gray-300 text-sm font-medium transition-colors">
+                                GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-slate-900/50 rounded-xl border border-slate-700 overflow-hidden hover:border-primary-500 transition-colors group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Task Management API</h3>
+                            <div class="text-2xl">📋</div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            RESTful API for task management with user authentication, real-time updates, and comprehensive testing.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-teal-700/20 text-teal-300 px-2 py-1 rounded text-xs">FastAPI</span>
+                            <span class="bg-yellow-600/20 text-yellow-300 px-2 py-1 rounded text-xs">Python</span>
+                            <span class="bg-blue-800/20 text-blue-300 px-2 py-1 rounded text-xs">DynamoDB</span>
+                            <span class="bg-blue-700/20 text-blue-300 px-2 py-1 rounded text-xs">Docker</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors">
+                                Documentation →
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gray-300 text-sm font-medium transition-colors">
+                                GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-slate-900/50 rounded-xl border border-slate-700 overflow-hidden hover:border-primary-500 transition-colors group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Data Visualization Dashboard</h3>
+                            <div class="text-2xl">📊</div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Interactive dashboard for data visualization with real-time charts, filters, and export capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600/20 text-blue-300 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-green-600/20 text-green-300 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-gray-600/20 text-gray-300 px-2 py-1 rounded text-xs">Express</span>
+                            <span class="bg-blue-700/20 text-blue-300 px-2 py-1 rounded text-xs">PostgreSQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors">
+                                Live Demo →
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gray-300 text-sm font-medium transition-colors">
+                                GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-slate-900/50 rounded-xl border border-slate-700 overflow-hidden hover:border-primary-500 transition-colors group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Cloud Infrastructure</h3>
+                            <div class="text-2xl">☁️</div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Scalable cloud infrastructure setup using Terraform with automated CI/CD pipelines and monitoring.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600/20 text-purple-300 px-2 py-1 rounded text-xs">Terraform</span>
+                            <span class="bg-orange-600/20 text-orange-300 px-2 py-1 rounded text-xs">AWS</span>
+                            <span class="bg-blue-700/20 text-blue-300 px-2 py-1 rounded text-xs">Docker</span>
+                            <span class="bg-gray-700/20 text-gray-300 px-2 py-1 rounded text-xs">GitHub Actions</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors">
+                                Documentation →
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gray-300 text-sm font-medium transition-colors">
+                                GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-slate-900/50 rounded-xl border border-slate-700 overflow-hidden hover:border-primary-500 transition-colors group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Mobile-First Web App</h3>
+                            <div class="text-2xl">📱</div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Progressive web application with offline capabilities, push notifications, and responsive design.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-black text-white px-2 py-1 rounded text-xs">Next.js</span>
+                            <span class="bg-cyan-600/20 text-cyan-300 px-2 py-1 rounded text-xs">Tailwind</span>
+                            <span class="bg-yellow-600/20 text-yellow-300 px-2 py-1 rounded text-xs">Firebase</span>
+                            <span class="bg-black text-white px-2 py-1 rounded text-xs">Vercel</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors">
+                                Live Demo →
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gray-300 text-sm font-medium transition-colors">
+                                GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-slate-800/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Interested in Working Together?</h2>
+            <p class="text-gray-300 text-lg mb-8">
+                I'm always excited to collaborate on interesting projects and explore new challenges.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors shadow-lg">
+                    Get In Touch
+                </a>
+                <a href="https://github.com/davecook88" target="_blank" class="border-2 border-gray-300 hover:border-white text-gray-300 hover:text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+                    View GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 mb-4 md:mb-0">
+                    © 2025 Dave Cook. Built with passion and Tailwind CSS.
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://linkedin.com/in/david-cook-a1549ba2" class="text-gray-400 hover:text-white transition-colors" target="_blank">
+                        LinkedIn
+                    </a>
+                    <a href="mailto:dave@mamalon.dev" class="text-gray-400 hover:text-white transition-colors">
+                        Email
+                    </a>
+                    <a href="https://github.com/davecook88" class="text-gray-400 hover:text-white transition-colors" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
