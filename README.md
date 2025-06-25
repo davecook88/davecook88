@@ -61,15 +61,6 @@
 
 </div>
 
----
-
-## 🎯 What I'm Up To
-
-- 🔭 Building scalable web applications with modern tech stacks
-- 🌱 Continuously learning and exploring new technologies
-- 💡 Open to collaborating on exciting projects
-- 📚 Sharing knowledge through code and documentation
-
 <div align="center">
   
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](david-cook-a1549ba2)
