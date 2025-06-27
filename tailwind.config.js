@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.html"],
+  content: ["./*.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
         sans: [
-          "Inter",
+          "Nunito Sans",
           "system-ui",
           "-apple-system",
           "BlinkMacSystemFont",

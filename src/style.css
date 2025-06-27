@@ -1,76 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Custom font families */
+.font-sans {
+  font-family: "Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
 
+.font-mono {
+  font-family: "JetBrains Mono", "Fira Code", Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+/* Custom CSS variables for our accent colors */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color: #222;
-  background-color: #ffffff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --color-accent-500: #06b6d4;
+  --color-accent-600: #0891b2;
+  --color-accent-700: #0e7490;
 }
 
-body {
-  margin: 0;
+/* Custom utility classes for accent colors */
+.text-accent-500 {
+  color: var(--color-accent-500);
 }
 
-#app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.hover\:text-accent-500:hover {
+  color: var(--color-accent-500);
 }
 
-header {
-  display: flex;
-  justify-content: flex-end;
-  background-color: #673ab8;
+.bg-accent-500 {
+  background-color: var(--color-accent-500);
 }
 
-header nav {
-  display: flex;
+/* Gradient utilities with accent colors */
+.from-transparent {
+  --tw-gradient-from: transparent;
 }
 
-header a {
-  color: #fff;
-  padding: 0.75rem;
-  text-decoration: none;
+.via-accent-500 {
+  --tw-gradient-via: var(--color-accent-500);
 }
 
-header a.active {
-  background-color: #0005;
+.to-transparent {
+  --tw-gradient-to: transparent;
 }
 
-header a:hover {
-  background-color: #0008;
-}
-
-main {
-  flex: auto;
-  display: flex;
-  align-items: center;
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-@media (max-width: 639px) {
-  main {
-    margin: 2rem;
+/* Custom animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #ccc;
-    background-color: #1a1a1a;
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
 }
