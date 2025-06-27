@@ -7,14 +7,7 @@ export default defineConfig(({ command }) => ({
   base: command === "build" ? "/davecook88/" : "/",
   build: {
     outDir: "./docs",
-    emptyOutDir: true, // also necessary
+    emptyOutDir: true,
   },
-  plugins: [
-    preact({
-      prerender: {
-        enabled: false, // Disable prerendering for GitHub Pages
-      },
-    }),
-    tailwindcss(),
-  ],
+  plugins: [preact(), tailwindcss()],
 }));
