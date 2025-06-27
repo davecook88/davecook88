@@ -11,9 +11,12 @@ import { Home } from "./pages/Home/index.jsx";
 import { NotFound } from "./pages/_404.jsx";
 import "./style.css";
 
+// Set router base depending on environment
+const routerBase = import.meta.env.PROD ? "/davecook88/" : "/";
+
 export function App() {
   return (
-    <LocationProvider>
+    <LocationProvider scope={routerBase}>
       <Header />
       <main class={"container mx-auto p-4"}>
         <Router>

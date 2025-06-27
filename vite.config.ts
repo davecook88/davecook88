@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => ({
-  base: command === "build" ? "./" : "/",
+  base: command === "build" ? "/davecook88/" : "/",
   build: {
     outDir: "./docs",
     emptyOutDir: true, // also necessary
