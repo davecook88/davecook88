@@ -21,7 +21,7 @@ export function App() {
       <main class={"container mx-auto p-4"}>
         <Router>
           <Route default component={Home} />
-          <Route path="/not-found" component={NotFound} />
+          <Route path="/404" component={NotFound} />
         </Router>
       </main>
     </LocationProvider>
