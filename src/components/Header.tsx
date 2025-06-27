@@ -2,7 +2,7 @@ import { useLocation } from "preact-iso";
 
 export function Header() {
   const { url } = useLocation();
-  
+
   // Get the base path for GitHub Pages
   const basePath = import.meta.env.PROD ? "/davecook88" : "";
 

@@ -12,11 +12,7 @@ export default defineConfig(({ command }) => ({
   plugins: [
     preact({
       prerender: {
-        enabled: true,
-        renderTarget: "#app",
-        additionalPrerenderRoutes: ["/404", "/about-me"],
-        previewMiddlewareEnabled: true,
-        previewMiddlewareFallback: "/404",
+        enabled: false, // Disable prerendering for GitHub Pages
       },
     }),
     tailwindcss(),
