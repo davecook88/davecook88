@@ -99,7 +99,7 @@ export function App() {
         />
       </div>
       <Header />
-      <main class={"container mx-auto p-4"}>
+      <main class={"container-lg mx-auto p-4"}>
         <PageRouter />
       </main>
     </LocationProvider>
