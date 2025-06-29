@@ -1,10 +1,10 @@
 import { LocationProvider, hydrate, prerender as ssr } from "preact-iso";
 import { useState, useEffect, lazy, Suspense } from "preact/compat";
 
-import { Header } from "./components/Header.jsx";
 import { Home } from "./pages/Home/index.jsx";
 import "./style.css";
 import NetworkGraph from "./components/NetworkGraph/index.js";
+import { Footer } from "./components/NetworkGraph/Footer.js";
 
 // Lazy load components
 const AboutMe = lazy(() =>
@@ -69,7 +69,7 @@ function PageRouter() {
 export function App() {
   return (
     <LocationProvider scope={routerBase}>
-      <div class="fixed inset-0 z-0">
+      <div class="fixed inset-0 z-0 max-h-dvh">
         <NetworkGraph
           nodeCount={60}
           maxConnections={5}
@@ -98,10 +98,10 @@ export function App() {
           }}
         />
       </div>
-      {/* <Header /> */}
       <main class={"container-lg mx-auto"}>
         <PageRouter />
       </main>
+      <Footer />
     </LocationProvider>
   );
 }
