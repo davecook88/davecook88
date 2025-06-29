@@ -98,8 +98,8 @@ export function App() {
           }}
         />
       </div>
-      <Header />
-      <main class={"container-lg mx-auto p-4"}>
+      {/* <Header /> */}
+      <main class={"container-lg mx-auto"}>
         <PageRouter />
       </main>
     </LocationProvider>

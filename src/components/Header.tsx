@@ -46,7 +46,7 @@ export function Header() {
 
   return (
     <header>
-      <nav>
+      <nav class="font-mono text-gray-400 glass-effect uppercase">
         <a
           href={`${basePath}/`}
           class={currentPage === "home" ? "active" : ""}
