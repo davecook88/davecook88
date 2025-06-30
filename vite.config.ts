@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import preact from "@preact/preset-vite";
 import tailwindcss from "@tailwindcss/vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => ({
@@ -9,5 +10,5 @@ export default defineConfig(({ command }) => ({
     outDir: "./docs",
     emptyOutDir: true,
   },
-  plugins: [preact(), tailwindcss()],
+  plugins: [preact(), tailwindcss(), tsconfigPaths()],
 }));

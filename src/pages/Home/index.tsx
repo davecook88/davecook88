@@ -1,40 +1,33 @@
+import { HomeContent } from "./HomeContent";
+
 export function Home() {
   return (
     <div class="home w-full">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 h-screen w-full">
+      <div class="flex flex-wrap p-4 h-screen w-full">
         {/* Centered text content with enhanced typography */}
-        <div class="relative z-10 flex items-center px-4 bg-transparent">
-          <div class="text-sans text-left animate-fade-in">
-            <div class="font-mono text-6xl md:text-6xl font-bold leading-none flex gap-4 text-gray-200 tracking-tight">
-              <span class="block text-gray-400 font-black uppercase select-none pointer-events-none tracking-tight">
-                Dave
-              </span>
-              <span class="block text-gray-400 font-black uppercase select-none pointer-events-none tracking-tight">
-                Cook
-              </span>
-            </div>
-            <div class="mt-2 text-sm md:text-base text-gray-400 font-mono tracking-wider uppercase animate-fade-in">
-              <span class="relative select-none pointer-events-none">
-                Senior Full Stack Engineer
-                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-accent-500 to-transparent opacity-70"></div>
-              </span>
+        <div class="basis-2/6 min-w-0 md:w-1/3 ">
+          <div class="h-full flex items-center justify-left p-4">
+            <div class="text-sans text-left animate-fade-in">
+              <div class="font-mono text-6xl md:text-6xl font-bold leading-none flex gap-4 text-gray-200 tracking-tight">
+                <span class="block text-gray-400 font-black uppercase select-none pointer-events-none tracking-tight">
+                  Dave
+                </span>
+                <span class="block text-gray-400 font-black uppercase select-none pointer-events-none tracking-tight">
+                  Cook
+                </span>
+              </div>
+              <div class="mt-2 text-sm md:text-base text-gray-400 font-mono tracking-wider uppercase animate-fade-in">
+                <span class="relative select-none pointer-events-none">
+                  Senior Full Stack Engineer
+                  <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-accent-500 to-transparent opacity-70"></div>
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Liquid Glass Element - positioned absolutely */}
-        <div class="relative w-full h-full rounded-3xl overflow-hidden z-20  transition-transform duration-300 ease-in-out">
-          {/* Background blur layer */}
-          <div class="absolute inset-0 glass-effect rounded-3xl"></div>
-          {/* Highlight layer*/}
-          <div class="absolute inset-0 glass-highlight rounded-3xl"></div>
-          {/* Content */}
-          <div class="relative z-10 flex items-center justify-center h-full p-6">
-            <div class="text-center text-white">
-              <h2 class="text-2xl font-light mb-2">Your Content</h2>
-              <p class="text-sm opacity-90">Goes here</p>
-            </div>
-          </div>
+        <div class="basis-4/6 min-w-0 md:w-2/3  h-full">
+          <HomeContent />
         </div>
       </div>
     </div>

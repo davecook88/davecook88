@@ -5,6 +5,7 @@ import { Home } from "./pages/Home/index.jsx";
 import "./style.css";
 import NetworkGraph from "./components/NetworkGraph/index.js";
 import { Footer } from "./components/NetworkGraph/Footer.js";
+import { getParamFromUrl, Params } from "./utils/url.js";
 
 // Lazy load components
 const AboutMe = lazy(() =>
@@ -21,19 +22,12 @@ function PageRouter() {
   const [currentPage, setCurrentPage] = useState("home");
 
   useEffect(() => {
-    // Function to read URL parameters
-    const getPageFromUrl = () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const page = urlParams.get("p");
-      return page || "home";
-    };
-
     // Set initial page
-    setCurrentPage(getPageFromUrl());
+    setCurrentPage(getParamFromUrl(Params.PAGE) || "home");
 
     // Listen for URL changes (back/forward buttons)
     const handlePopState = () => {
-      setCurrentPage(getPageFromUrl());
+      setCurrentPage(getParamFromUrl(Params.PAGE) || "home");
     };
 
     window.addEventListener("popstate", handlePopState);
@@ -69,7 +63,7 @@ function PageRouter() {
 export function App() {
   return (
     <LocationProvider scope={routerBase}>
-      <div class="fixed inset-0 z-0 max-h-dvh">
+      <div class="fixed inset-0 max-h-dvh pointer-events-none z-[-1]">
         <NetworkGraph
           nodeCount={60}
           maxConnections={5}
@@ -98,7 +92,7 @@ export function App() {
           }}
         />
       </div>
-      <main class={"container-lg mx-auto"}>
+      <main class="container-lg mx-auto z-10 pointer-events-auto">
         <PageRouter />
       </main>
       <Footer />

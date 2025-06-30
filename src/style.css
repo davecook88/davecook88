@@ -83,3 +83,59 @@
   box-shadow: inset 2px 2px 0px -1px rgba(75, 75, 75, 0.7),
     inset 0 0 8px 1px rgba(75, 75, 75, 0.2), 0 8px 32px rgba(0, 0, 0, 0.3);
 }
+
+/* Shimmer effect on button hover */
+.shimmer-hover {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.shimmer-hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 35%,
+    rgba(255, 255, 255, 0.28) 50%,
+    rgba(0, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0.1) 65%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  box-shadow: 0 0 24px 8px rgba(0, 255, 255, 0.08),
+    0 0 48px 16px rgba(255, 255, 255, 0.1);
+  filter: blur(0.5px) brightness(1.2);
+  transform: skewX(-18deg);
+  transition: opacity 0.4s;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.shimmer-hover:hover::after {
+  animation: shimmer-move 2.1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  opacity: 1;
+}
+@keyframes shimmer-move {
+  0% {
+    left: -60%;
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  50% {
+    left: 40%;
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}
