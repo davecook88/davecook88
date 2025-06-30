@@ -1,4 +1,5 @@
 import { FC, JSX } from "preact/compat";
+import { Views } from "./constants";
 
 interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {}
 const InitialButton: FC<ButtonProps> = ({ ...props }) => (
@@ -26,7 +27,13 @@ const InitialButton: FC<ButtonProps> = ({ ...props }) => (
   </button>
 );
 
-export const HomeContentInitialButtons = () => {
+interface HomeContentInitialButtonsProps {
+  redirect: (page: string) => void;
+}
+
+export const HomeContentInitialButtons: FC<HomeContentInitialButtonsProps> = ({
+  redirect,
+}) => {
   return (
     <div className=" h-full flex items-center justify-center">
       <div
@@ -40,7 +47,9 @@ export const HomeContentInitialButtons = () => {
         w-3/6
         `}
       >
-        <InitialButton>About Me</InitialButton>
+        <InitialButton onClick={() => redirect(Views.ABOUT_ME)}>
+          About Me
+        </InitialButton>
         <InitialButton>My Stack</InitialButton>
         <InitialButton>Resume</InitialButton>
       </div>

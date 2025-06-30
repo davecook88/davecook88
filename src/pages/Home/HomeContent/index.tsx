@@ -1,33 +1,40 @@
-import { useEffect, useState } from "preact/hooks";
-import { getParamFromUrl, Params } from "#/utils/url";
+import { useEffect, useReducer } from "preact/hooks";
+import { getParamFromUrl, setParamInUrl, Params } from "#/utils/url";
 import { HomeContentInitialButtons } from "./InitialButtons";
-
-const Views = {
-  BUTTONS: "buttons",
-};
-
-type View = (typeof Views)[keyof typeof Views];
+import { View, Views } from "./constants";
+import { GlassHolder } from "./GlassHolder";
+import { AboutMeContent } from "./AboutMe";
 
 export const HomeContent = () => {
-  const [currentView, setCurrentView] = useState<View>(Views.BUTTONS);
+  // Dummy state to force re-render
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
+
+  // setCurrentView updates the URL param and forces a re-render
+  const setCurrentView = (view: View) => {
+    setParamInUrl(Params.HOME_VIEW, view);
+    forceUpdate(0); // force re-render
+  };
 
   useEffect(() => {
-    // Set initial page
-    setCurrentView(getParamFromUrl(Params.HOME_VIEW) || Views.BUTTONS);
-
-    // Listen for URL changes (back/forward buttons)
     const handlePopState = () => {
-      setCurrentView(getParamFromUrl(Params.HOME_VIEW) || Views.BUTTONS);
+      forceUpdate(0);
     };
-
     window.addEventListener("popstate", handlePopState);
-
     return () => {
       window.removeEventListener("popstate", handlePopState);
     };
   }, []);
+
+  const currentView = getParamFromUrl(Params.HOME_VIEW) || Views.BUTTONS;
+
   switch (currentView) {
     case Views.BUTTONS:
-      return <HomeContentInitialButtons />;
+      return <HomeContentInitialButtons redirect={setCurrentView} />;
+    case Views.ABOUT_ME:
+      return (
+        <GlassHolder onBackClick={() => setCurrentView(Views.BUTTONS)}>
+          <AboutMeContent />
+        </GlassHolder>
+      );
   }
 };

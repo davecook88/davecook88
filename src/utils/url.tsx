@@ -12,3 +12,9 @@ export const getParamFromUrl = (param: Params): string | null => {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param) ?? null;
 };
+
+export function setParamInUrl(param: string, value: string) {
+  const url = new URL(window.location.href);
+  url.searchParams.set(param, value);
+  window.history.pushState({}, "", url.toString());
+}
