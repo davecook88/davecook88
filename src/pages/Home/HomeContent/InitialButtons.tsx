@@ -50,8 +50,15 @@ export const HomeContentInitialButtons: FC<HomeContentInitialButtonsProps> = ({
         <InitialButton onClick={() => redirect(Views.ABOUT_ME)}>
           About Me
         </InitialButton>
-        <InitialButton>My Stack</InitialButton>
-        <InitialButton>Resume</InitialButton>
+        <InitialButton onClick={() => redirect(Views.PROJECTS)}>
+          Projects
+        </InitialButton>
+        <InitialButton onClick={() => redirect(Views.RESUME)}>
+          Resume
+        </InitialButton>
+        <InitialButton onClick={() => redirect(Views.CONTACT)}>
+          Contact
+        </InitialButton>
       </div>
     </div>
   );
