@@ -1,6 +1,7 @@
 import { FC } from "preact/compat";
 import { ProjectDetails } from "./types";
 import FullPageScreenshot from "#/components/NetworkGraph/Screenshot/FullPageScreenshot";
+import ScreenshotCarousel from "#/components/NetworkGraph/Screenshot/ScreenshotCarousel";
 
 export interface ProjectSummaryProps {
   project: ProjectDetails;
@@ -14,15 +15,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({ project }) => {
       <p className="text-sm text-gray-500 mb-2">{dates}</p>
       <p className="mb-4">{description}</p>
       <div className="screenshots grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-        {screenshots.map((screenshot) => (
-          <FullPageScreenshot
-            src={screenshot.src}
-            alt={screenshot.alt}
-            key={screenshot.src}
-            description={screenshot.description}
-            active={true}
-          />
-        ))}
+        <ScreenshotCarousel screenshots={screenshots} />
       </div>
       <div className="technologies flex flex-wrap gap-2">
         {technologies.map((tech, index) => (
