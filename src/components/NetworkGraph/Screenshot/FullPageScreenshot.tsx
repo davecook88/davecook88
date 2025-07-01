@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 interface FullPageScreenshotProps {
   /**
@@ -14,6 +15,48 @@ interface FullPageScreenshotProps {
    */
   description?: string;
 }
+
+/**
+ * PortalModal renders its children in a React portal attached to document.body
+ */
+const PortalModal: React.FC<{
+  open: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}> = ({ open, onClose, children }) => {
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [open, onClose]);
+
+  // Prevent background scroll when modal is open
+  useEffect(() => {
+    if (!open) return;
+    const original = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = original;
+    };
+  }, [open]);
+
+  if (!open) return null;
+  return createPortal(
+    <div
+      ref={modalRef}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+      onClick={onClose}
+    >
+      {children}
+    </div>,
+    document.body
+  );
+};
 
 const FullPageScreenshot: React.FC<FullPageScreenshotProps> = ({
   src,
@@ -63,37 +106,34 @@ const FullPageScreenshot: React.FC<FullPageScreenshotProps> = ({
         </div>
       </div>
 
-      {/* Modal for large screenshot */}
-      {modalOpen && (
+      {/* Modal for large screenshot using PortalModal */}
+      <PortalModal open={modalOpen} onClose={() => setModalOpen(false)}>
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-          onClick={() => setModalOpen(false)}
+          className="rounded-lg shadow-xl max-h-[90vh] max-w-4xl w-full overflow-y-auto p-4 relative glass-effect flex flex-col"
+          onClick={(e) => e.stopPropagation()}
         >
-          <div
-            className="rounded-lg shadow-xl max-h-[90vh] max-w-4xl w-full overflow-y-auto p-4 relative bg-white flex flex-col"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="sticky top-2 right-2 text-gray-400 hover:text-white text-2xl font-bold w-full flex justify-end z-20">
             <button
-              className="absolute top-2 right-2 text-gray-600 hover:text-black text-2xl font-bold"
+              className="cursor-pointer"
               onClick={() => setModalOpen(false)}
               aria-label="Close"
             >
               &times;
             </button>
-            {description && (
-              <div className="mb-4 text-gray-700 text-base border-b pb-3 bg-white z-10 sticky top-0">
-                {description}
-              </div>
-            )}
-            <img
-              src={src}
-              alt={alt}
-              className="w-full h-auto"
-              draggable={false}
-            />
           </div>
+          {description && (
+            <div className="my-4 text-gray-400 text-base border-b pb-3 bg-black z-10 top-0">
+              {description}
+            </div>
+          )}
+          <img
+            src={src}
+            alt={alt}
+            className="w-full h-auto"
+            draggable={false}
+          />
         </div>
-      )}
+      </PortalModal>
     </>
   );
 };
