@@ -14,6 +14,10 @@ interface FullPageScreenshotProps {
    * Optional description to show in the modal
    */
   description?: string;
+  /**
+   * If false, disables scrolling and greys out the image
+   */
+  active?: boolean;
 }
 
 /**
@@ -62,6 +66,7 @@ const FullPageScreenshot: React.FC<FullPageScreenshotProps> = ({
   src,
   alt = "Full page screenshot",
   description,
+  active = false,
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -69,7 +74,7 @@ const FullPageScreenshot: React.FC<FullPageScreenshotProps> = ({
 
   // Gradually scroll down the image
   useEffect(() => {
-    if (!scrolling || modalOpen) return;
+    if (!active || !scrolling || modalOpen) return;
     const el = scrollRef.current;
     if (!el) return;
     let frame: number;
@@ -82,32 +87,44 @@ const FullPageScreenshot: React.FC<FullPageScreenshotProps> = ({
     };
     frame = requestAnimationFrame(scrollStep);
     return () => cancelAnimationFrame(frame);
-  }, [scrolling, modalOpen]);
+  }, [scrolling, modalOpen, active]);
 
   // Pause scrolling on hover
-  const handleMouseEnter = () => setScrolling(false);
-  const handleMouseLeave = () => setScrolling(true);
+  const handleMouseEnter = () => active && setScrolling(false);
+  const handleMouseLeave = () => active && setScrolling(true);
 
   return (
     <>
-      {/* Screenshot preview with gradual scroll */}
+      {/* Screenshot preview with gradual scroll or static greyed out */}
       <div
         ref={scrollRef}
-        className="relative w-full max-w-md h-36 overflow-y-scroll rounded-lg shadow-lg border border-gray-200 cursor-pointer transition hover:scale-105"
-        onClick={() => setModalOpen(true)}
+        className={`relative w-full max-w-md h-36 rounded-lg shadow-lg border border-gray-200 transition ${
+          active
+            ? "overflow-y-scroll cursor-pointer hover:scale-105"
+            : "overflow-hidden grayscale opacity-60 cursor-not-allowed"
+        }`}
+        onClick={active ? () => setModalOpen(true) : undefined}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        title="Click to enlarge"
+        title={active ? "Click to enlarge" : undefined}
         style={{ scrollBehavior: "smooth" }}
       >
-        <img src={src} alt={alt} className="w-full" draggable={false} />
-        <div className="sticky bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded w-max">
-          Click to enlarge
-        </div>
+        <img src={src} alt={alt} className="w-full h-auto" draggable={false} />
+        {active && (
+          <div className="sticky bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded w-max">
+            Click to enlarge
+          </div>
+        )}
+        {!active && (
+          <div className="absolute inset-0 bg-gray-900/30 rounded-lg pointer-events-none" />
+        )}
       </div>
 
       {/* Modal for large screenshot using PortalModal */}
-      <PortalModal open={modalOpen} onClose={() => setModalOpen(false)}>
+      <PortalModal
+        open={modalOpen && active}
+        onClose={() => setModalOpen(false)}
+      >
         <div
           className="rounded-lg shadow-xl max-h-[90vh] max-w-4xl w-full overflow-y-auto p-4 relative glass-effect flex flex-col"
           onClick={(e) => e.stopPropagation()}

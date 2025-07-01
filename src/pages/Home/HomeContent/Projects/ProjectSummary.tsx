@@ -20,6 +20,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({ project }) => {
             alt={screenshot.alt}
             key={screenshot.src}
             description={screenshot.description}
+            active={true}
           />
         ))}
       </div>
