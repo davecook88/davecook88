@@ -1,8 +1,14 @@
+import { MiruniProject } from "./data/miruni";
+import { ProjectSummary } from "./ProjectSummary";
+
+const projectsDetails = [MiruniProject];
+
 export const ProjectsContent = () => {
   return (
     <section>
-      <h1>Projects</h1>
-      <p>Here are some of my projects:</p>
+      {projectsDetails.map((project) => (
+        <ProjectSummary key={project.name} project={project} />
+      ))}
     </section>
   );
 };
