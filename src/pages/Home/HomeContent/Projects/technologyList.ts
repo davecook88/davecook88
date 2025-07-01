@@ -80,5 +80,60 @@ export const TECHNOLOGIES: TechnologyInfo[] = [
     label: "Docker",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   },
+  {
+    name: TechnologyName.TYPESCRIPT,
+    label: "TypeScript",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  },
+  {
+    name: TechnologyName.CHAKRA,
+    label: "Chakra UI",
+    logo: "https://www.vectorlogo.zone/logos/chakra-ui/chakra-ui-icon.svg",
+  },
+  {
+    name: TechnologyName.PYTHON,
+    label: "Python",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
+  {
+    name: TechnologyName.EXPRESS,
+    label: "Express",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+  },
+  {
+    name: TechnologyName.GRAPHQL,
+    label: "GraphQL",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+  },
+  {
+    name: TechnologyName.AWS,
+    label: "AWS",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+  },
+  {
+    name: TechnologyName.KUBERNETES,
+    label: "Kubernetes",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+  },
+  {
+    name: TechnologyName.PHP,
+    label: "PHP",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+  },
+  {
+    name: TechnologyName.WORDPRESS,
+    label: "WordPress",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg",
+  },
+  {
+    name: TechnologyName.JEST,
+    label: "Jest",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
+  },
+  {
+    name: TechnologyName.NEXTJS,
+    label: "Next.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  },
   // ...add more as needed, following the pattern above
 ];
