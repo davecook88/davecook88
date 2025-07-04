@@ -22,7 +22,7 @@ export const GlassHolder: FC<GlassHolderProps> = ({
       }`}
     >
       {/* Content */}
-      <div className="md:max-h-[95vh] relative z-10 glass-effect glass-highlight rounded-3xl  p-6 flex-col gap-4 justify-left overflow-scroll">
+      <div className="md:max-h-[95vh] relative z-10 glass-effect glass-highlight rounded-3xl p-4 md:p-6 flex-col gap-4 justify-left overflow-scroll">
         <button
           onClick={onBackClick}
           className="text-accent-500 mb-4 font-mono cursor-pointer hover:scale-105 transition-transform"

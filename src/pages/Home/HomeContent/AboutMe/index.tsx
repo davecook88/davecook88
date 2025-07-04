@@ -23,32 +23,30 @@ const details = [
   },
   {
     label: "From:",
-    value: () => "Stourbridge, United Kingdom",
+    value: () => "Stourbridge, UK 🇬🇧",
     isLink: true,
-    icon: (
-      <svg
-        className="inline w-4 h-4 ml-1 text-accent-500"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-      </svg>
-    ),
+    icon: null,
+    // <svg
+    //   className="inline w-4 h-4 ml-1 text-accent-500"
+    //   fill="currentColor"
+    //   viewBox="0 0 24 24"
+    // >
+    //   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+    // </svg>
     link: "https://www.google.com/maps/place/Stourbridge,+UK",
   },
   {
-    label: "Currently At:",
-    value: () => "Tula de Allende, Mexico",
+    label: "Location:",
+    value: () => "Tula de Allende, MX 🇲🇽",
     isLink: true,
-    icon: (
-      <svg
-        className="inline w-4 h-4 ml-1 text-accent-500"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-      </svg>
-    ),
+    icon: null,
+    // <svg
+    //   className="inline w-4 h-4 ml-1 text-accent-500"
+    //   fill="currentColor"
+    //   viewBox="0 0 24 24"
+    // >
+    //   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+    // </svg>
     link: "https://www.google.com/maps/place/Tula+de+Allende,+Hgo.,+Mexico",
   },
 ];
@@ -91,15 +89,15 @@ export const AboutMeContent = () => {
   };
 
   return (
-    <div className="bg-primary-900/80 py-2 mx-auto flex-col gap-4">
-      <table className="mb-6 font-mono text-accent-500 w-auto text-left">
+    <div className="bg-primary-900/80 md:py-2 mx-auto flex-col gap-4">
+      <table className="mb-6 font-mono text-accent-500 w-auto text-left md:text-sm">
         <tbody>
           {details.map((detail, i) => (
             <tr key={detail.label}>
-              <td className="pr-4 align-top whitespace-nowrap text-accent-700 text-lg">
+              <td className="md:pr-4 align-top whitespace-nowrap text-accent-700 ">
                 {detail.label}
               </td>
-              <td className="text-accent-200 text-lg">
+              <td className="text-accent-200 px-2">
                 {i > typedIndex ? null : detail.isLink ? (
                   <a
                     href={detail.link}
