@@ -44,7 +44,8 @@ export const HomeContentInitialButtons: FC<HomeContentInitialButtonsProps> = ({
         justify-center
         gap-4
         p-4
-        w-3/6
+        w-full
+        md:w-3/6
         `}
       >
         <InitialButton onClick={() => redirect(Views.ABOUT_ME)}>

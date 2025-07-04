@@ -95,7 +95,6 @@ export function App() {
       <main class="container-lg mx-auto z-10 pointer-events-auto">
         <PageRouter />
       </main>
-      <Footer />
     </LocationProvider>
   );
 }
