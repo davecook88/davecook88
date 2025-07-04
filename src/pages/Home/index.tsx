@@ -2,13 +2,13 @@ import { HomeContent } from "./HomeContent";
 
 export function Home() {
   return (
-    <div class="home w-full">
+    <div class="home w-full h-max-screen">
       <div class="flex flex-wrap p-4 h-screen w-full">
         {/* Centered text content with enhanced typography */}
-        <div class="basis-2/6 min-w-0 md:w-1/3 ">
-          <div class="h-full flex items-center justify-left p-4">
+        <div class="md:basis-2/6 min-w-0 md:w-1/3 ">
+          <div class="md:h-full flex items-center justify-left p-4">
             <div class="text-sans text-left animate-fade-in">
-              <div class="font-mono text-6xl md:text-6xl font-bold leading-none flex gap-4 text-gray-200 tracking-tight">
+              <div class="font-mono text-2xl md:text-6xl font-bold leading-none flex gap-4 text-gray-200 tracking-tight">
                 <span class="block text-gray-400 font-black uppercase select-none pointer-events-none tracking-tight">
                   Dave
                 </span>
@@ -26,7 +26,7 @@ export function Home() {
           </div>
         </div>
 
-        <div class="basis-4/6 min-w-0 md:w-2/3  h-full">
+        <div class="w-full min-w-0 md:w-2/3  md:h-full">
           <HomeContent />
         </div>
       </div>

@@ -35,7 +35,7 @@ export const HomeContentInitialButtons: FC<HomeContentInitialButtonsProps> = ({
   redirect,
 }) => {
   return (
-    <div className=" h-full flex items-center justify-center">
+    <div className=" md:h-full flex items-center justify-center">
       <div
         className={`
         flex
