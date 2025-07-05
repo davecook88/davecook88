@@ -1,4 +1,4 @@
-import { SocialLinks } from "#/components/NetworkGraph/SocialLinks";
+import { SocialLinks } from "#/components/SocialLinks";
 import { HomeContent } from "./HomeContent";
 
 export function Home() {

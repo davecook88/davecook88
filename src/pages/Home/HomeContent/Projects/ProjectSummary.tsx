@@ -1,7 +1,7 @@
 import { FC } from "preact/compat";
 import { ProjectDetails } from "./types";
-import FullPageScreenshot from "#/components/NetworkGraph/Screenshot/FullPageScreenshot";
-import ScreenshotCarousel from "#/components/NetworkGraph/Screenshot/ScreenshotCarousel";
+import FullPageScreenshot from "#/components/Screenshot/FullPageScreenshot";
+import ScreenshotCarousel from "#/components/Screenshot/ScreenshotCarousel";
 import { TECHNOLOGIES, TechnologyName } from "./technologyList";
 
 export interface ProjectSummaryProps {
@@ -27,7 +27,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({ project }) => {
       </a>
       <p className="text-sm text-gray-500 mb-2">{dates}</p>
       <p className="mb-4">{description}</p>
-      <div className="screenshots grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+      <div className="screenshots ">
         <ScreenshotCarousel screenshots={screenshots} />
       </div>
       <div className="technologies grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 w-full">

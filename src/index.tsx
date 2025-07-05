@@ -4,7 +4,7 @@ import { useState, useEffect, lazy, Suspense } from "preact/compat";
 import { Home } from "./pages/Home/index.jsx";
 import "./style.css";
 import NetworkGraph from "./components/NetworkGraph/index.js";
-import { Footer } from "./components/NetworkGraph/Footer.js";
+import { Footer } from "./components/Footer.js";
 import { getParamFromUrl, Params } from "./utils/url.js";
 
 // Lazy load components
@@ -68,14 +68,14 @@ export function App() {
           nodeCount={60}
           maxConnections={5}
           connectionDistance={140}
-          nodeSpeed={0.2}
+          nodeSpeed={0.001}
           nodeSize={4}
           connectionOpacity={0.8}
           nodeOpacity={0.9}
-          mouseRadius={150}
+          mouseRadius={1}
           energyParticleCount={25}
           growthRate={0.0008}
-          maxNodes={180}
+          maxNodes={20}
           colors={{
             nodes: "#ffffff",
             connections: "#ffffff",
