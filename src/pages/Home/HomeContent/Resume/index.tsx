@@ -81,7 +81,7 @@ export const Resume = () => {
           <Job
             title="Senior Fullstack Engineer"
             company="Miruni.io"
-            period="Jun 2023 - Jun 2024"
+            period="Jun 2023 - Present"
             location="Remote"
             description="Principal full-stack developer in a small team of a productivity SaaS startup. In a team of varying size but mainly limited to 2-3 developers, I was the only engineer responsible for managing every aspect of the application."
             achievements={[

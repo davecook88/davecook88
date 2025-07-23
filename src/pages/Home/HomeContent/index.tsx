@@ -6,6 +6,7 @@ import { GlassHolder } from "./GlassHolder";
 import { AboutMeContent } from "./AboutMe";
 import { ProjectsContent } from "./Projects";
 import { Resume } from "./Resume";
+import { ContactContent } from "./Contact";
 
 export const HomeContent = () => {
   // Dummy state to force re-render
@@ -51,6 +52,10 @@ export const HomeContent = () => {
         </GlassHolder>
       );
     case Views.CONTACT:
-      return;
+      return (
+        <GlassHolder onBackClick={() => setCurrentView(Views.BUTTONS)}>
+          <ContactContent />
+        </GlassHolder>
+      );
   }
 };
