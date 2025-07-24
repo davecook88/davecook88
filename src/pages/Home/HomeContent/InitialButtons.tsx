@@ -11,19 +11,23 @@ const InitialButton: FC<ButtonProps> = ({ ...props }) => (
       glass-effect
       glass-highlight
       shimmer-hover
-    text-gray-300
+      text-gray-200
       font-sans
+      font-semibold
       uppercase
-      text-xl
-      py-4
-      px-4
+      text-lg
+      md:text-xl
+      py-5
+      px-6
       w-full
-      rounded
+      rounded-xl
       cursor-pointer
-      hover:text-gray-200
+      hover:text-white
       transition-all
       duration-300
-      ease-in-out` + (props.className || "")
+      ease-in-out
+      tracking-wide
+      shadow-lg` + (props.className || "")
     }
     {...props}
   >
@@ -57,14 +61,14 @@ export const HomeContentInitialButtons: FC<HomeContentInitialButtonsProps> = ({
         flex-col
         items-center
         justify-center
-        gap-4
-        p-4
+        gap-5
+        p-6
         w-full
-        md:w-3/6
+        md:w-2/5
         transition-all
         duration-300
         ease-in-out
-        ${isVisible ? "opacity-100" : "opacity-0"}
+        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
         `}
       >
         <InitialButton onClick={() => redirect(Views.ABOUT_ME)}>

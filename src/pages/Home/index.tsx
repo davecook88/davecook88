@@ -13,11 +13,11 @@ export function Home() {
   useEffect(() => {
     const checkPageSelection = () => {
       const newPageSelected = !!currentView && currentView !== Views.BUTTONS;
-      
+
       if (newPageSelected !== isPageSelected) {
         // Start transition
         setIsTransitioning(true);
-        
+
         // Allow transition to complete before showing content
         setTimeout(() => {
           setIsPageSelected(newPageSelected);
@@ -40,13 +40,11 @@ export function Home() {
 
   return (
     <div
-      class={`home w-full min-h-screen transition-all duration-300 ease-in-out ${
-        isPageSelected ? "pt-4" : ""
-      }`}
+      class={`home w-full min-h-screen transition-all duration-300 ease-in-out`}
     >
       <div
-        class={`flex flex-wrap p-4 w-full text-gray-400 transition-all duration-300 ease-in-out ${
-          isPageSelected ? "h-auto md:h-32" : "h-screen md:h-screen"
+        class={`flex flex-wrap w-full text-gray-400 transition-all duration-300 ease-in-out ${
+          isPageSelected ? "md:h-min" : "h-screen md:h-screen"
         }`}
       >
         {/* Centered text content with enhanced typography */}
@@ -59,9 +57,13 @@ export function Home() {
         <div
           class={`${
             isPageSelected
-              ? "w-full min-w-0 md:w-full md:h-auto mt-2 md:mt-6"
+              ? "w-full min-w-0 md:w-full md:h-auto"
               : "w-full min-w-0 md:w-2/3 md:h-full flex items-center"
-          } transition-all duration-300 ease-in-out ${isTransitioning ? "opacity-0" : "opacity-100"}`}
+          } transition-all duration-300 ease-in-out ${
+            isTransitioning
+              ? "opacity-0 translate-y-4"
+              : "opacity-100 translate-y-0"
+          }`}
         >
           {!isTransitioning && <HomeContent />}
         </div>

@@ -1,6 +1,7 @@
 import { Section } from "./Section.js";
 import { Job } from "./Job.js";
 import { Pill } from "./Pill.js";
+import { EMAIL_ADDRESS } from "#/constants.js";
 
 const skills = {
   "Back End": [
@@ -48,22 +49,48 @@ const skills = {
 
 export const Resume = () => {
   return (
-    <div className="w-full h-full p-4 text-primary-200">
+    <div className="w-full h-full p-4 md:p-8 text-primary-200">
       <header className="text-center mb-12">
-        <h1 className="text-5xl font-mono font-bold text-accent-500 mb-2 uppercase">
+        <h1 className="text-4xl md:text-5xl font-mono font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-300 mb-2 uppercase tracking-wide">
           Dave Cook
         </h1>
-        <p className="text-xl text-primary-100 font-mono">
-          Senior Fullstack Engineer
+        <p className="text-xl md:text-2xl text-primary-100 font-mono font-semibold">
+          Senior Full Stack Engineer
         </p>
-        <div className="flex justify-center gap-4 mt-2 text-sm text-accent-500"></div>
+        <div className="flex justify-center gap-4 mt-4 text-sm text-accent-500">
+          <span className="flex items-center">
+            <svg
+              className="w-4 h-4 mr-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Tula de Allende, MX
+          </span>
+          <span className="flex items-center">
+            <svg
+              className="w-4 h-4 mr-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            {EMAIL_ADDRESS}
+          </span>
+        </div>
       </header>
 
       <Section title="Skills">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {Object.entries(skills).map(([category, skillList]) => (
-            <div key={category}>
-              <h3 className="font-bold text-lg text-accent-600 mb-3">
+            <div key={category} className="glass-effect rounded-xl p-5">
+              <h3 className="font-bold text-lg text-accent-500 mb-4 pb-2 border-b border-primary-700">
                 {category}
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -130,7 +157,7 @@ export const Resume = () => {
             description="Successful freelance business as a freelance developer and automations specialist, acting as a long-term on-call resource and consultant to international businesses. Solving business needs for technical and non-technical clients using appropriate technologies and tools for the task at hand."
             achievements={[
               "Created Zapier custom apps (Node.js) for Airtable, Monday.com, Basecamp, TrackHS, ClickUp, Dropbox, Zoom, Squarespace, Smartsheets, Shopify, among many others.",
-              "Custom Google Chrome extensions for increasing productivity (eg custom buttons to make changes in Copper CRM from GMail’s UI).",
+              "Custom Google Chrome extensions for increasing productivity (eg custom buttons to make changes in Copper CRM from GMail's UI).",
               "Independently developed booking app for contracting firm using Firebase Functions as a backend, and a react frontend and integrations with Google Calendar and Google forms.",
             ]}
           />
@@ -139,38 +166,62 @@ export const Resume = () => {
 
       <Section title="Other Work Experience">
         <div className="space-y-4">
-          <p>Head of ESL Department, Vinschool, Hanoi, Vietnam (2018-2019)</p>
-          <p>English Teacher, Colegio Álamos, Querétaro, Mexico (2016-2018)</p>
-          <p>ALT Teacher, Kagoshima, Japan (2015-2016)</p>
+          <div className="glass-effect rounded-xl p-5">
+            <h3 className="font-bold text-lg text-accent-500">
+              Head of ESL Department
+            </h3>
+            <p className="text-primary-300">
+              Vinschool, Hanoi, Vietnam (2018-2019)
+            </p>
+          </div>
+          <div className="glass-effect rounded-xl p-5">
+            <h3 className="font-bold text-lg text-accent-500">
+              English Teacher
+            </h3>
+            <p className="text-primary-300">
+              Colegio Álamos, Querétaro, Mexico (2016-2018)
+            </p>
+          </div>
+          <div className="glass-effect rounded-xl p-5">
+            <h3 className="font-bold text-lg text-accent-500">ALT Teacher</h3>
+            <p className="text-primary-300">Kagoshima, Japan (2015-2016)</p>
+          </div>
         </div>
       </Section>
 
-      <Section title="Education">
-        <div className="space-y-4">
-          <p>
-            <span className="font-bold">MA TESOL</span> - University of
-            Birmingham
-          </p>
-          <p>
-            <span className="font-bold">BA European Languages</span> -
-            University of Aberystwyth
-          </p>
-        </div>
-      </Section>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Section title="Education">
+          <div className="space-y-4">
+            <div className="glass-effect rounded-xl p-5">
+              <h3 className="font-bold text-lg text-accent-500">MA TESOL</h3>
+              <p className="text-primary-300">University of Birmingham</p>
+            </div>
+            <div className="glass-effect rounded-xl p-5">
+              <h3 className="font-bold text-lg text-accent-500">
+                BA European Languages
+              </h3>
+              <p className="text-primary-300">University of Aberystwyth</p>
+            </div>
+          </div>
+        </Section>
 
-      <Section title="Languages">
-        <div className="flex justify-around md:justify-start md:gap-12">
-          <p>
-            <span className="font-bold">English:</span> Native Speaker
-          </p>
-          <p>
-            <span className="font-bold">Spanish:</span> Fluent
-          </p>
-          <p>
-            <span className="font-bold">French:</span> Intermediate
-          </p>
-        </div>
-      </Section>
+        <Section title="Languages">
+          <div className="space-y-4">
+            <div className="glass-effect rounded-xl p-5">
+              <h3 className="font-bold text-lg text-accent-500">English</h3>
+              <p className="text-primary-300">Native Speaker</p>
+            </div>
+            <div className="glass-effect rounded-xl p-5">
+              <h3 className="font-bold text-lg text-accent-500">Spanish</h3>
+              <p className="text-primary-300">Fluent</p>
+            </div>
+            <div className="glass-effect rounded-xl p-5">
+              <h3 className="font-bold text-lg text-accent-500">French</h3>
+              <p className="text-primary-300">Intermediate</p>
+            </div>
+          </div>
+        </Section>
+      </div>
     </div>
   );
 };

@@ -14,27 +14,14 @@ export const Header: FC<HeaderProps> = ({ className = "" }) => {
   return (
     <div
       className={
-        "w-max uppercase flex items-center transition-all duration-300 ease-in-out h-full"
+        "w-max font-sans flex items-center transition-all duration-300 ease-in-out h-full"
       }
     >
-      <div className="flex flex-col h-full">
-        <div className="text-sans text-left animate-fade-in flex-grow">
-          <div
-            class={`font-mono ${
-              isPageSelected ? "text-lg md:text-xl" : "text-2xl md:text-6xl"
-            } font-bold leading-none flex gap-2 md:gap-4 transition-all duration-300 ease-in-out`}
-          >
-            <span class="block font-black">Dave</span>
-            <span class="block font-black">Cook</span>
-          </div>
-          <div
-            class={`mt-1 md:mt-2 text-xs md:text-base font-mono tracking-wider uppercase animate-fade-in transition-all duration-300 ease-in-out ${
-              isPageSelected ? "hidden md:block" : "block"
-            }`}
-          >
-            <span class="relative select-none pointer-events-none">
-              Senior Full Stack Engineer
-            </span>
+      <div className="flex flex-col h-full text-white text-4xl">
+        <div className="text-sans text-left animate-fade-in flex-grow w-full h-full flex flex-col justify-center">
+          <div>
+            I'm <span className="font-bold text-accent-500">Dave Cook</span> and
+            I'm a full-stack developer.
           </div>
         </div>
         {!isPageSelected && (

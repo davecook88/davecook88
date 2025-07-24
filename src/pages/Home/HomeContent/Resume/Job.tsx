@@ -15,20 +15,23 @@ export const Job = ({
   description,
   achievements,
 }: JobProps) => (
-  <div className="mb-6">
-    <div className="flex justify-between items-baseline">
-      <h3 className="text-lg font-bold text-primary-100">{title}</h3>
-      <p className="text-sm text-accent-600">{period}</p>
+  <div className="glass-effect rounded-xl p-6 mb-6">
+    <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+      <h3 className="text-xl font-bold text-primary-100">{title}</h3>
+      <div className="flex flex-col md:flex-row md:items-baseline md:space-x-4">
+        <p className="text-sm text-accent-500 font-medium">{period}</p>
+        <p className="text-sm text-accent-600">{location}</p>
+      </div>
     </div>
-    <div className="flex justify-between items-baseline mb-2">
-      <h4 className="text-lg font-semibold text-accent-500">{company}</h4>
-      <p className="text-sm text-accent-600">{location}</p>
+    <h4 className="text-lg font-semibold text-accent-400 mb-3">{company}</h4>
+    <p className="mb-4 text-primary-300 leading-relaxed">{description}</p>
+    <div>
+      <h5 className="font-semibold text-accent-500 mb-2">Key Achievements:</h5>
+      <ul className="list-disc list-inside space-y-2 text-primary-200 ml-4">
+        {achievements.map((achievement, index) => (
+          <li key={index} className="pl-2">{achievement}</li>
+        ))}
+      </ul>
     </div>
-    <p className="mb-3 text-primary-300">{description}</p>
-    <ul className="list-disc list-inside space-y-1 text-primary-200">
-      {achievements.map((achievement) => (
-        <li key={achievement}>{achievement}</li>
-      ))}
-    </ul>
   </div>
 );
