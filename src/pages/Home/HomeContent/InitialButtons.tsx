@@ -1,4 +1,5 @@
 import { FC, JSX } from "preact/compat";
+import { useEffect, useState } from "preact/hooks";
 import { Views } from "./constants";
 
 interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {}
@@ -19,7 +20,10 @@ const InitialButton: FC<ButtonProps> = ({ ...props }) => (
       w-full
       rounded
       cursor-pointer
-      hover:text-gray-200` + (props.className || "")
+      hover:text-gray-200
+      transition-all
+      duration-300
+      ease-in-out` + (props.className || "")
     }
     {...props}
   >
@@ -34,8 +38,19 @@ interface HomeContentInitialButtonsProps {
 export const HomeContentInitialButtons: FC<HomeContentInitialButtonsProps> = ({
   redirect,
 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Delay visibility to ensure all transitions have completed
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 350); // Slightly longer than CSS transition duration
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className=" md:h-full flex items-center justify-center">
+    <div className="w-full h-full flex flex-col items-center justify-center">
       <div
         className={`
         flex
@@ -46,6 +61,10 @@ export const HomeContentInitialButtons: FC<HomeContentInitialButtonsProps> = ({
         p-4
         w-full
         md:w-3/6
+        transition-all
+        duration-300
+        ease-in-out
+        ${isVisible ? "opacity-100" : "opacity-0"}
         `}
       >
         <InitialButton onClick={() => redirect(Views.ABOUT_ME)}>

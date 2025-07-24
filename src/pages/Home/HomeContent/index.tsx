@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from "preact/hooks";
-import { getParamFromUrl, setParamInUrl, Params } from "#/utils/url";
+import { useParamFromUrl, setParamInUrl, Params } from "#/utils/url";
 import { HomeContentInitialButtons } from "./InitialButtons";
 import { View, Views } from "./constants";
 import { GlassHolder } from "./GlassHolder";
@@ -28,7 +28,7 @@ export const HomeContent = () => {
     };
   }, []);
 
-  const currentView = getParamFromUrl(Params.HOME_VIEW) || Views.BUTTONS;
+  const currentView = useParamFromUrl(Params.HOME_VIEW) || Views.BUTTONS;
 
   switch (currentView) {
     case Views.BUTTONS:

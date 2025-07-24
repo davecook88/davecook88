@@ -1,6 +1,6 @@
 export const SocialLinks = () => {
   return (
-    <div class="flex justify-left items-center gap-6 mb-2">
+    <>
       {/* Email */}
       <a
         href="mailto:dave@mamalon.dev"
@@ -54,6 +54,6 @@ export const SocialLinks = () => {
           />
         </svg>
       </a>
-    </div>
+    </>
   );
 };

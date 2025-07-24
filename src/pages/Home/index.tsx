@@ -1,33 +1,69 @@
 import { SocialLinks } from "#/components/SocialLinks";
 import { HomeContent } from "./HomeContent";
+import { useEffect, useState } from "preact/hooks";
+import { useParamFromUrl, Params } from "#/utils/url";
+import { Views } from "./HomeContent/constants";
+import { Header } from "#/components/Header";
 
 export function Home() {
+  const currentView = useParamFromUrl(Params.HOME_VIEW);
+  const [isPageSelected, setIsPageSelected] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const checkPageSelection = () => {
+      const newPageSelected = !!currentView && currentView !== Views.BUTTONS;
+      
+      if (newPageSelected !== isPageSelected) {
+        // Start transition
+        setIsTransitioning(true);
+        
+        // Allow transition to complete before showing content
+        setTimeout(() => {
+          setIsPageSelected(newPageSelected);
+          setIsTransitioning(false);
+        }, 300); // Match the CSS transition duration
+      }
+    };
+
+    checkPageSelection();
+
+    const handlePopState = () => {
+      checkPageSelection();
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [currentView, isPageSelected]);
+
   return (
-    <div class="home w-full h-max-screen">
-      <div class="flex flex-wrap p-4 h-screen w-full text-gray-400">
+    <div
+      class={`home w-full min-h-screen transition-all duration-300 ease-in-out ${
+        isPageSelected ? "pt-4" : ""
+      }`}
+    >
+      <div
+        class={`flex flex-wrap p-4 w-full text-gray-400 transition-all duration-300 ease-in-out ${
+          isPageSelected ? "h-auto md:h-32" : "h-screen md:h-screen"
+        }`}
+      >
         {/* Centered text content with enhanced typography */}
-        <div class="md:basis-2/6 min-w-0 md:w-1/3 tracking-tight p-4">
-          <div class="md:h-full flex items-center justify-left uppercase select-none pointer-events-none">
-            <div class="text-sans text-left animate-fade-in ">
-              <div class="font-mono text-2xl md:text-6xl font-bold leading-none flex gap-4 ">
-                <span class="block  font-black">Dave</span>
-                <span class="block  font-black">Cook</span>
-              </div>
-              <div class="mt-2 text-sm md:text-base  font-mono tracking-wider uppercase animate-fade-in">
-                <span class="relative select-none pointer-events-none">
-                  Senior Full Stack Engineer
-                  <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-accent-500 to-transparent opacity-70"></div>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="mt-2">
-            <SocialLinks />
-          </div>
+        <div
+          class={`md:basis-2/6 min-w-0 md:w-1/3 tracking-tight p-4 transition-all duration-300 ease-in-out`}
+        >
+          <Header />
         </div>
 
-        <div class="w-full min-w-0 md:w-2/3  md:h-full">
-          <HomeContent />
+        <div
+          class={`${
+            isPageSelected
+              ? "w-full min-w-0 md:w-full md:h-auto mt-2 md:mt-6"
+              : "w-full min-w-0 md:w-2/3 md:h-full flex items-center"
+          } transition-all duration-300 ease-in-out ${isTransitioning ? "opacity-0" : "opacity-100"}`}
+        >
+          {!isTransitioning && <HomeContent />}
         </div>
       </div>
     </div>

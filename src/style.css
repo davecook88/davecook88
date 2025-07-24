@@ -64,6 +64,26 @@
   }
 }
 
+@keyframes slideToTop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.5s ease-in-out;
 }
@@ -72,14 +92,24 @@
   animation: slideUp 0.6s ease-out;
 }
 
+.animate-slide-to-top {
+  animation: slideToTop 0.3s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
 .glass-effect {
   backdrop-filter: blur(8px);
   filter: url(#liquid-distort);
+  transition: all 0.3s ease-in-out;
 }
 
 .glass-highlight {
   box-shadow: inset 2px 2px 0px -1px rgba(75, 75, 75, 0.7),
     inset 0 0 8px 1px rgba(75, 75, 75, 0.2), 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
 }
 
 /* Shimmer effect on button hover */
@@ -136,4 +166,20 @@
     left: 120%;
     opacity: 0;
   }
+}
+
+/* Page transition styles */
+.page-selected-header {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
