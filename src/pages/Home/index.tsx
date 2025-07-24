@@ -6,6 +6,7 @@ import { Views } from "./HomeContent/constants";
 import { Header } from "#/components/Header";
 import { BaseSection } from "./Sections/base";
 import { Footer } from "#/components/Footer";
+import { AboutMeSection } from "./Sections/AboutMe";
 
 export function Home() {
   const currentView = useParamFromUrl(Params.HOME_VIEW);
@@ -42,12 +43,10 @@ export function Home() {
 
   return (
     <div
-      class={`home w-full min-h-screen transition-all duration-300 ease-in-out`}
+      class={`home w-full min-h-screen transition-all duration-300 ease-in-out bg-gray-900`}
     >
       <div
-        class={`flex flex-wrap w-full text-gray-400 transition-all duration-300 ease-in-out ${
-          isPageSelected ? "md:h-min" : "h-screen md:h-screen"
-        }`}
+        class={`flex flex-wrap w-full text-gray-400 transition-all duration-300 ease-in-out h-screen`}
       >
         {/* Centered text content with enhanced typography */}
         <div
@@ -55,23 +54,9 @@ export function Home() {
         >
           <Header />
         </div>
-
-        {/* <div
-          class={`${
-            isPageSelected
-              ? "w-full min-w-0 md:w-full md:h-auto"
-              : "w-full min-w-0 md:w-2/3 md:h-full flex items-center"
-          } transition-all duration-300 ease-in-out ${
-            isTransitioning
-              ? "opacity-0 translate-y-4"
-              : "opacity-100 translate-y-0"
-          }`}
-        >
-          {!isTransitioning && <HomeContent />}
-        </div> */}
       </div>
-      <BaseSection className={`bg-gray-900`}>
-        <HomeContent />
+      <BaseSection>
+        <AboutMeSection />
       </BaseSection>
       <Footer />
     </div>
