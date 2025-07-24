@@ -4,6 +4,8 @@ import { useEffect, useState } from "preact/hooks";
 import { useParamFromUrl, Params } from "#/utils/url";
 import { Views } from "./HomeContent/constants";
 import { Header } from "#/components/Header";
+import { BaseSection } from "./Sections/base";
+import { Footer } from "#/components/Footer";
 
 export function Home() {
   const currentView = useParamFromUrl(Params.HOME_VIEW);
@@ -54,7 +56,7 @@ export function Home() {
           <Header />
         </div>
 
-        <div
+        {/* <div
           class={`${
             isPageSelected
               ? "w-full min-w-0 md:w-full md:h-auto"
@@ -66,8 +68,12 @@ export function Home() {
           }`}
         >
           {!isTransitioning && <HomeContent />}
-        </div>
+        </div> */}
       </div>
+      <BaseSection className={`bg-gray-900`}>
+        <HomeContent />
+      </BaseSection>
+      <Footer />
     </div>
   );
 }
