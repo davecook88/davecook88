@@ -6,6 +6,7 @@ import { Header } from "#/components/Header";
 import { BaseSection } from "./Sections/base";
 import { Footer } from "#/components/Footer";
 import { AboutMeSection } from "./Sections/AboutMe";
+import { EditorLayout } from "#/components/EditorLayout";
 
 export function Home() {
   const currentView = useParamFromUrl(Params.HOME_VIEW);
@@ -44,19 +45,14 @@ export function Home() {
     <div
       class={`home w-full min-h-screen transition-all duration-300 ease-in-out bg-gray-900`}
     >
-      <div
-        class={`flex flex-wrap w-full text-gray-400 transition-all duration-300 ease-in-out h-screen`}
-      >
-        {/* Centered text content with enhanced typography */}
-        <div
-          class={`md:basis-2/6 min-w-0 md:w-1/3 tracking-tight p-4 transition-all duration-300 ease-in-out`}
-        >
-          <Header />
-        </div>
-      </div>
-      <BaseSection>
-        <AboutMeSection />
-      </BaseSection>
+      <EditorLayout
+        rightPanel={<Header />}
+        leftPanel={
+          <BaseSection>
+            <AboutMeSection />
+          </BaseSection>
+        }
+      />
       <Footer />
     </div>
   );
