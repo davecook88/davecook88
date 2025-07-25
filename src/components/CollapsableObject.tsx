@@ -39,6 +39,24 @@ export const CollapsableObject: FC<CollapsableObjectProps> = ({
   };
 
   const renderValue = (key: string, value: JsonObject) => {
+    if (
+      typeof value === "object" &&
+      value !== null &&
+      typeof value._val === "string" &&
+      typeof value._link === "string"
+    ) {
+      return (
+        <a
+          href={value._link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-green-400 hover:underline cursor-pointer"
+        >
+          "{value._val}"
+        </a>
+      );
+    }
+
     const _value = value._val ?? value;
     console.log("Rendering value for key:", key, "value:", _value);
     if (typeof _value === "string") {
@@ -149,7 +167,10 @@ export const CollapsableObject: FC<CollapsableObjectProps> = ({
         <div className="ml-6 border-l border-gray-700 pl-2 py-1">
           {getDisplayEntries(data).map(([key, value]) => (
             <div key={key} className="flex">
-              {typeof value === "string" && (
+              {(typeof value === "string" ||
+                (typeof value === "object" &&
+                  value !== null &&
+                  "_val" in value)) && (
                 <span className="text-amber-300 mr-2">{key}:</span>
               )}
               {renderValue(key, value as JsonObject)}

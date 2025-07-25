@@ -35,4 +35,17 @@ describe("JsonExplorer", () => {
     expect(linkElement).toHaveAttribute("href", "https://example.com");
     expect(linkElement).toHaveClass("cursor-pointer");
   });
+
+  test("renders arbitrary string with url link", () => {
+    const data: JsonObject = {
+      contact: {
+        website: "https://example.com",
+        email: {
+          _val: "Miruni.io",
+          _link: "https://miruni.io",
+          _type: "string",
+        },
+      },
+    };
+  });
 });
