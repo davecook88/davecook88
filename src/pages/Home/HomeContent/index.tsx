@@ -1,6 +1,5 @@
 import { useEffect, useReducer } from "preact/hooks";
 import { useParamFromUrl, setParamInUrl, Params } from "#/utils/url";
-import { HomeContentInitialButtons } from "./InitialButtons";
 import { View, Views } from "./constants";
 import { GlassHolder } from "./GlassHolder";
 import { AboutMeContent } from "./AboutMe";
@@ -32,7 +31,8 @@ export const HomeContent = () => {
 
   switch (currentView) {
     case Views.BUTTONS:
-      return <HomeContentInitialButtons redirect={setCurrentView} />;
+      // Instead of showing buttons, we'll show the JSON explorer in the header
+      return <div></div>;
     case Views.ABOUT_ME:
       return (
         <GlassHolder onBackClick={() => setCurrentView(Views.BUTTONS)}>

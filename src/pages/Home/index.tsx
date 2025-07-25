@@ -1,5 +1,4 @@
 import { SocialLinks } from "#/components/SocialLinks";
-import { HomeContent } from "./HomeContent";
 import { useEffect, useState } from "preact/hooks";
 import { useParamFromUrl, Params } from "#/utils/url";
 import { Views } from "./HomeContent/constants";

@@ -3,6 +3,7 @@ import { useParamFromUrl, Params } from "#/utils/url";
 import { Views } from "#/pages/Home/HomeContent/constants";
 import { SocialLinks } from "./SocialLinks";
 import { useRef, useState } from "preact/hooks";
+import { JsonExplorer } from "./JsonExplorer";
 
 interface HeaderProps {
   className?: string;
@@ -42,6 +43,73 @@ export const Header: FC<HeaderProps> = ({ className = "" }) => {
 
   const [isSticky, setIsSticky] = useState(false);
   const nameRef = useRef<HTMLSpanElement>(null);
+  
+  // Define the JSON data structure for the explorer
+  const jsonData = {
+    name: "Dave Cook",
+    role: "Senior Full Stack Developer",
+    location: "Tula de Allende, Mexico",
+    skills: {
+      frontend: [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Vue",
+        "HTML/CSS",
+        "Tailwind CSS"
+      ],
+      backend: [
+        "Node.js",
+        "Python",
+        "FastAPI",
+        "Express",
+        "PostgreSQL",
+        "MongoDB"
+      ],
+      devops: [
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "CI/CD",
+        "Terraform"
+      ],
+      other: [
+        "Git",
+        "REST APIs",
+        "GraphQL",
+        "Testing (Jest, Pytest)"
+      ]
+    },
+    experience: [
+      {
+        company: "Miruni.io",
+        position: "Senior Fullstack Engineer",
+        period: "Jun 2023 - Present",
+        description: "Principal full-stack developer in a small team of a productivity SaaS startup."
+      },
+      {
+        company: "Turn Technologies",
+        position: "Senior Fullstack Engineer",
+        period: "2022 - Jun 2023",
+        description: "Sole-backend engineer for AI-powered product, Advise."
+      }
+    ],
+    education: [
+      {
+        degree: "MA TESOL",
+        institution: "University of Birmingham"
+      },
+      {
+        degree: "BA European Languages",
+        institution: "University of Aberystwyth"
+      }
+    ],
+    contact: {
+      email: "dave@mamalon.dev",
+      github: "https://github.com/davecook88",
+      linkedin: "https://www.linkedin.com/in/david-cook-a1549ba2/"
+    }
+  };
 
   useEffect(() => {
     const updateFontSize = (event: Event) => {
@@ -98,47 +166,7 @@ export const Header: FC<HeaderProps> = ({ className = "" }) => {
       }
     >
       <div className="flex flex-col h-full text-white text-2xl font-mono">
-        <div
-          style={{
-            opacity: 1,
-          }}
-          className={`text-sans text-left animate-fade-in flex-grow w-full flex flex-col justify-center tracking-tighter transition-opacity duration-300`}
-        >
-          <span className="header-name-other">My name is</span>
-
-          <span
-            ref={nameRef}
-            id="header-name"
-            style={{
-              fontSize: "50px",
-              opacity: isSticky ? 0 : 1,
-              transition: "font-size 0.3s cubic-bezier(0.4,0,0.2,1)",
-              top: isSticky ? 0 : undefined,
-              left: isSticky ? 0 : undefined,
-              width: isSticky ? "100vw" : undefined,
-              zIndex: isSticky ? 1000 : undefined,
-              padding: isSticky ? "0.5rem 1rem" : undefined,
-              textAlign: isSticky ? "left" : undefined,
-              boxShadow: isSticky ? "0 2px 8px 0 rgba(0,0,0,0.08)" : undefined,
-            }}
-            className={`font-bold font-sans text-accent-500 tracking-tighter uppercase transition-all duration-300`}
-          >
-            Dave Cook
-          </span>
-          <span className="header-name-other">
-            and I'm a full-stack developer
-          </span>
-        </div>
-        {/* Sticky header (only visible when sticky) */}
-
-        <div
-          id="header-name-sticky"
-          className={`font-bold font-sans text-accent-500 tracking-tighter uppercase w-full transition-all duration-300 fixed top-0 ${
-            isSticky ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-        >
-          Dave Cook
-        </div>
+        <JsonExplorer data={jsonData} />
       </div>
     </div>
   );
