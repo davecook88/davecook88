@@ -2,11 +2,11 @@ import { useContentStore } from "#/store/content-store";
 import { ComponentType, JSX } from "preact";
 import { FileContentName, FileContentNames } from "./types";
 import { MeJson } from "./MeJson";
-import { AboutFileContent } from "./AboutHtml";
+import { AboutMeContent } from "./AboutHtml";
 
 const FileContentComponents: Record<FileContentName, ComponentType> = {
   [FileContentNames.ME_JSON]: MeJson,
-  [FileContentNames.ABOUT]: AboutFileContent,
+  [FileContentNames.ABOUT]: AboutMeContent,
 };
 
 export const FileContentDisplay = () => {

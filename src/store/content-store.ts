@@ -1,4 +1,4 @@
-import { FileContentName } from "#/FileContent/types";
+import { FileContentName, FileContentNames } from "#/FileContent/types";
 import { create } from "zustand";
 
 interface ContentStore {
@@ -7,7 +7,7 @@ interface ContentStore {
 }
 
 export const useContentStore = create<ContentStore>((set) => ({
-  currentContent: null,
+  currentContent: FileContentNames.ME_JSON, // Default content
   setCurrentContent: (content: FileContentName) =>
     set({ currentContent: content }),
 }));

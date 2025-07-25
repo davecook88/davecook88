@@ -83,7 +83,7 @@ export const EditorLayout: FC<EditorLayoutProps> = ({
 
       {/* Right Panel */}
       <div
-        className="h-full overflow-scroll flex-1 transition-none"
+        className="h-full overflow-scroll flex-1 transition-none max-h-screen"
         style={{ width: `${100 - leftPanelWidth}%` }}
       >
         {rightPanel}
