@@ -1,5 +1,6 @@
 import { FC, JSX, useState } from "preact/compat";
 import { CollapsableObject } from "./CollapsableObject";
+import { JsonObject } from "../utils/jsonTypes";
 
 interface CollapsibleArrayProps {
   title: string;
@@ -17,11 +18,16 @@ export const CollapsibleArray: FC<CollapsibleArrayProps> = ({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   const defaultRenderItem = (item: any, index: number) => {
-    if (typeof item === "object" && item !== null && !Array.isArray(item)) {
+    if (
+      typeof item === "object" &&
+      item !== null &&
+      !Array.isArray(item) &&
+      !item._type
+    ) {
       return (
         <CollapsableObject
           title={`${title}[${index}]`}
-          data={item}
+          data={item as JsonObject}
           defaultOpen={false}
         />
       );
@@ -34,6 +40,7 @@ export const CollapsibleArray: FC<CollapsibleArrayProps> = ({
         />
       );
     } else {
+      item = item._val ?? item;
       return (
         <div className="py-1">
           {typeof item === "string" && (
