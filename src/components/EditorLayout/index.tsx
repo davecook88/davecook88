@@ -1,25 +1,86 @@
-import { FC } from "preact/compat";
+import { debounce } from "#/utils/debounce";
+import { FC, useRef, useState, useEffect } from "preact/compat";
 
 interface EditorLayoutProps {
   rightPanel?: React.ReactNode;
   leftPanel?: React.ReactNode;
 }
 
+const DEBOUNCE_MS = 1;
+
 export const EditorLayout: FC<EditorLayoutProps> = ({
   rightPanel,
   leftPanel,
 }) => {
+  const resizeBoundryRef = useRef<HTMLDivElement>(null);
+  const [leftPanelWidth, setLeftPanelWidth] = useState(30); // Default width in percentage
+  const [isDragging, setIsDragging] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = debounce((e: MouseEvent) => {
+      if (!isDragging) return;
+
+      e.preventDefault();
+      const draggedPercentage = (e.clientX / window.innerWidth) * 100;
+      const normalizedPercentage =
+        Math.round(Math.max(10, Math.min(90, draggedPercentage)) * 10) / 10;
+      if (normalizedPercentage === leftPanelWidth) return; // No change
+      setLeftPanelWidth(normalizedPercentage);
+    }, DEBOUNCE_MS);
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      document.body.style.cursor = "";
+      document.body.style.userSelect = "";
+    };
+
+    if (isDragging) {
+      document.body.style.cursor = "col-resize";
+      document.body.style.userSelect = "none";
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+    }
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isDragging]);
+
+  const handleMouseDown = (e: MouseEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
   return (
-    <div class={`flex flex-wrap w-full text-gray-400`}>
-      {/* Centered text content with enhanced typography */}
-      <div class={`w-[30vw] flex flex-row`}>
-        <div className="overflow-scroll w-full h-full">{rightPanel}</div>
-        <div className="h-full w-1 bg-gray-500 cursor-col-resize hover:bg-accent-500" />
-      </div>
+    <div
+      className={`flex w-full h-full text-gray-400 ${
+        isDragging ? "select-none" : ""
+      }`}
+    >
+      {/* Left Panel */}
       <div
-        class={`w-[65vw] flex flex-col items-center justify-center text-center p-4 md:p-8 lg:p-12`}
+        className="h-full overflow-scroll transition-none"
+        style={{ width: `${leftPanelWidth}%` }}
       >
         {leftPanel}
+      </div>
+
+      {/* Resize Handle */}
+      <div
+        ref={resizeBoundryRef}
+        className={`h-screen w-1 cursor-col-resize flex-shrink-0 transition-colors ${
+          isDragging ? "bg-accent-500" : "bg-gray-500 hover:bg-accent-500"
+        }`}
+        onMouseDown={handleMouseDown}
+      />
+
+      {/* Right Panel */}
+      <div
+        className="h-full overflow-scroll flex-1 transition-none"
+        style={{ width: `${100 - leftPanelWidth}%` }}
+      >
+        {rightPanel}
       </div>
     </div>
   );

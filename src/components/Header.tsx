@@ -4,6 +4,7 @@ import { Views } from "#/pages/Home/HomeContent/constants";
 import { SocialLinks } from "./SocialLinks";
 import { useRef, useState } from "preact/hooks";
 import { JsonExplorer } from "./JsonExplorer";
+import { debounce } from "#/utils/debounce";
 
 interface HeaderProps {
   className?: string;
@@ -22,21 +23,6 @@ const getScrollPercentage = (event: Event) => {
 
 const MAX_FONT_SIZE = 50; // Maximum font size in pixels
 const MIN_FONT_SIZE = 20; // Minimum font size in pixels
-
-// Debounce utility (leading edge: run immediately, then wait)
-function debounce<T extends (...args: any[]) => void>(fn: T, delay: number) {
-  let timeout: number | undefined;
-  let canRun = true;
-  return (...args: Parameters<T>) => {
-    if (canRun) {
-      fn(...args);
-      canRun = false;
-      timeout = window.setTimeout(() => {
-        canRun = true;
-      }, delay);
-    }
-  };
-}
 
 export const Header: FC<HeaderProps> = ({ className = "" }) => {
   const currentView = useParamFromUrl(Params.HOME_VIEW) || Views.BUTTONS;
@@ -100,54 +86,6 @@ export const Header: FC<HeaderProps> = ({ className = "" }) => {
       linkedin: "https://www.linkedin.com/in/david-cook-a1549ba2/",
     },
   };
-
-  useEffect(() => {
-    const updateFontSize = (event: Event) => {
-      const scrolledPercentage = getScrollPercentage(event);
-      const headerElement = document.querySelector("#header-name");
-      if (headerElement && headerElement instanceof HTMLElement) {
-        const newFontSize = Math.max(
-          MIN_FONT_SIZE,
-          Math.min(
-            MAX_FONT_SIZE,
-            (1 - scrolledPercentage / 100) * MAX_FONT_SIZE
-          )
-        );
-        headerElement.style.setProperty("font-size", `${newFontSize}px`);
-      }
-      const headerNameContainer =
-        document.querySelectorAll(".header-name-other");
-      if (headerNameContainer) {
-        headerNameContainer.forEach((element) => {
-          if (element instanceof HTMLElement) {
-            element.style.setProperty(
-              "opacity",
-              `${0.5 - scrolledPercentage / 100}`
-            );
-          }
-        });
-      }
-
-      // Sticky logic
-      const rect = nameRef.current?.getBoundingClientRect();
-      if (rect) {
-        console.log("Header rect:", rect.top);
-        if (rect.top <= 0 && !isSticky) {
-          console.log("Header is sticky now");
-          setIsSticky(true);
-        } else if (rect.top > 0 && isSticky) {
-          console.log("Header is no longer sticky");
-          setIsSticky(false);
-        }
-      }
-    };
-    const debouncedUpdateFontSize = debounce(updateFontSize, 50);
-
-    window.addEventListener("scroll", debouncedUpdateFontSize);
-    return () => {
-      window.removeEventListener("scroll", debouncedUpdateFontSize);
-    };
-  }, [isSticky]);
 
   return (
     <div

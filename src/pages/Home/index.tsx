@@ -42,12 +42,10 @@ export function Home() {
   }, [currentView, isPageSelected]);
 
   return (
-    <div
-      class={`home w-full min-h-screen transition-all duration-300 ease-in-out bg-gray-900`}
-    >
+    <div class={`w-full min-h-screen bg-gray-900`}>
       <EditorLayout
-        rightPanel={<Header />}
-        leftPanel={
+        leftPanel={<Header />}
+        rightPanel={
           <BaseSection>
             <AboutMeSection />
           </BaseSection>

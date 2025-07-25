@@ -3,8 +3,7 @@ import { useState, useEffect, lazy, Suspense } from "preact/compat";
 
 import { Home } from "./pages/Home/index.jsx";
 import "./style.css";
-import NetworkGraph from "./components/NetworkGraph/index.js";
-import { Footer } from "./components/Footer.js";
+
 import { getParamFromUrl, Params } from "./utils/url.js";
 
 // Lazy load components
