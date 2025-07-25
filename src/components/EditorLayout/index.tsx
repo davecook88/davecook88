@@ -1,5 +1,6 @@
 import { debounce } from "#/utils/debounce";
 import { FC, useRef, useState, useEffect } from "preact/compat";
+import { ContactSection } from "./ContactSection";
 
 interface EditorLayoutProps {
   rightPanel?: React.ReactNode;
@@ -59,11 +60,11 @@ export const EditorLayout: FC<EditorLayoutProps> = ({
       }`}
     >
       {/* Left Panel */}
-      <div
-        className="h-full overflow-scroll transition-none"
-        style={{ width: `${leftPanelWidth}%` }}
-      >
-        {leftPanel}
+      <div className="h-full" style={{ width: `${leftPanelWidth}%` }}>
+        <div className="overflow-scroll">{leftPanel}</div>
+        <div className="overflow-scroll">
+          <ContactSection />
+        </div>
       </div>
 
       {/* Resize Handle */}

@@ -51,7 +51,6 @@ export function Home() {
           </BaseSection>
         }
       />
-      <Footer />
     </div>
   );
 }
