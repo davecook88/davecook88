@@ -1,35 +1,6 @@
-import { FC, useEffect } from "preact/compat";
-import { useParamFromUrl, Params } from "#/utils/url";
-import { Views } from "#/pages/Home/HomeContent/constants";
-import { SocialLinks } from "./SocialLinks";
-import { useRef, useState } from "preact/hooks";
-import { JsonExplorer } from "./JsonExplorer";
-import { debounce } from "#/utils/debounce";
+import { JsonExplorer } from "#/components/JsonExplorer";
 
-interface HeaderProps {
-  className?: string;
-}
-
-const getScrollPercentage = (event: Event) => {
-  const scrollTop =
-    document.documentElement.scrollTop || document.body.scrollTop;
-  // percentage of screenheight scrolled
-  const screenHeight = window.innerHeight;
-  const scrolledPercentage = (scrollTop / screenHeight) * 100;
-  console.log("Scroll position:", scrollTop);
-  console.log("Scrolled percentage:", scrolledPercentage);
-  return scrolledPercentage;
-};
-
-const MAX_FONT_SIZE = 50; // Maximum font size in pixels
-const MIN_FONT_SIZE = 20; // Minimum font size in pixels
-
-export const Header: FC<HeaderProps> = ({ className = "" }) => {
-  const currentView = useParamFromUrl(Params.HOME_VIEW) || Views.BUTTONS;
-
-  const [isSticky, setIsSticky] = useState(false);
-  const nameRef = useRef<HTMLSpanElement>(null);
-
+export const MeJson = () => {
   // Define the JSON data structure for the explorer
   const jsonData = {
     name: "Dave Cook",
