@@ -14,7 +14,9 @@ describe("JsonExplorer", () => {
       },
     };
 
-    const { container } = render(<JsonExplorer data={data} defaultOpen={true} />);
+    const { container } = render(
+      <JsonExplorer data={data} defaultOpen={true} />
+    );
     expect(container).toBeTruthy();
   });
 
@@ -24,7 +26,9 @@ describe("JsonExplorer", () => {
       _link: "https://example.com",
     };
 
-    const { container } = render(<JsonExplorer data={data} defaultOpen={true} />);
+    const { container } = render(
+      <JsonExplorer data={data} defaultOpen={true} />
+    );
     const linkElement = container.querySelector("a");
 
     expect(linkElement).toBeInTheDocument();

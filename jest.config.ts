@@ -1,21 +1,19 @@
 export default {
-  testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['@testing-library/jest-dom'],
+  testEnvironment: "jsdom",
+  setupFilesAfterEnv: ["@testing-library/jest-dom"],
   moduleNameMapper: {
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
   },
   transform: {
-    '^.+\\.(ts|tsx|js|jsx)$': [
-      'ts-jest',
+    "^.+\\.(ts|tsx|js|jsx)$": [
+      "ts-jest",
       {
-        tsconfig: 'tsconfig.json',
-        useESM: true
-      }
-    ]
+        tsconfig: "tsconfig.json",
+        useESM: true,
+      },
+    ],
   },
-  transformIgnorePatterns: [
-    'node_modules/(?!(preact|@testing-library)/)'
-  ],
-  testMatch: ['**/*.test.(ts|tsx)'],
-  extensionsToTreatAsEsm: ['.ts', '.tsx']
+  transformIgnorePatterns: ["node_modules/(?!(preact|@testing-library)/)"],
+  testMatch: ["**/*.test.(ts|tsx)"],
+  extensionsToTreatAsEsm: [".ts", ".tsx"],
 };
