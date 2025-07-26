@@ -2,6 +2,7 @@ import { debounce } from "#/utils/debounce";
 import { FC, useRef, useState, useEffect } from "preact/compat";
 import { ContactSection } from "./ContactSection";
 import { FilesSection } from "./Files";
+import { FileTabs } from "./FileTabs";
 
 interface EditorLayoutProps {
   rightPanel?: React.ReactNode;
@@ -86,6 +87,7 @@ export const EditorLayout: FC<EditorLayoutProps> = ({
         className="h-full overflow-scroll flex-1 transition-none max-h-screen"
         style={{ width: `${100 - leftPanelWidth}%` }}
       >
+        <FileTabs />
         {rightPanel}
       </div>
     </div>
