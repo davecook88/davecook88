@@ -12,19 +12,10 @@ export const FilesSection = () => {
   return (
     <MenuSection title="Dave Cook">
       <div className="p-2 flex flex-col space-y-2 text-sm">
-        <FileEntry
-          logo={<JSONFileLogo />}
-          fileName="me.json"
-          currentContent="me.json"
-        />
-        <FileEntry
-          logo={<HtmlLogo />}
-          fileName="about.html"
-          currentContent="about.html"
-        />
+        <FileEntry fileName="me.json" currentContent="me.json" />
+        <FileEntry fileName="about.html" currentContent="about.html" />
         <FolderEntry folderName="Projects">
           <FileEntry
-            logo={<TypescriptLogo />}
             fileName={FileContentNames.PROJECT_MIRUNI}
             currentContent={FileContentNames.PROJECT_MIRUNI}
           />

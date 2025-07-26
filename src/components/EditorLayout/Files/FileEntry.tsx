@@ -2,12 +2,12 @@ import { FileContentName } from "#/FileContent/types";
 import { useContentStore } from "#/store/content-store";
 import { JSX } from "preact";
 import { FC } from "preact/compat";
+import { FileLogo } from "./FileLogo";
 
 export const FileEntry: FC<{
-  logo: JSX.Element;
-  fileName: string;
+  fileName: FileContentName;
   currentContent: FileContentName;
-}> = ({ fileName, currentContent, logo }) => {
+}> = ({ fileName, currentContent }) => {
   const { setCurrentContent } = useContentStore();
   return (
     <div
@@ -15,7 +15,7 @@ export const FileEntry: FC<{
       aria-label={fileName}
       onClick={() => setCurrentContent(currentContent)}
     >
-      {logo}
+      <FileLogo fileName={fileName} />
       <span>{fileName}</span>
     </div>
   );
