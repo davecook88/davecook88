@@ -3,6 +3,7 @@ import { TechnologyName } from "../technologyList";
 
 export const MiruniProject: ProjectDetails = {
   name: "Miruni",
+  role: "Sole Developer",
   url: "https://miruni.io",
   dates: "2022 - Present",
   description:

@@ -4,6 +4,8 @@ import { HtmlLogo } from "#/components/Logos/html";
 import { MenuSection } from "../MenuSection";
 import { FileEntry } from "./FileEntry";
 import { FolderEntry } from "./FolderEntry";
+import { FileContentNames } from "#/FileContent/types";
+import { TypescriptLogo } from "#/components/Logos/typescript";
 
 export const FilesSection = () => {
   const { setCurrentContent } = useContentStore();
@@ -22,9 +24,9 @@ export const FilesSection = () => {
         />
         <FolderEntry folderName="Projects">
           <FileEntry
-            logo={<HtmlLogo />}
-            fileName="project1.html"
-            currentContent="about.html"
+            logo={<TypescriptLogo />}
+            fileName={FileContentNames.PROJECT_MIRUNI}
+            currentContent={FileContentNames.PROJECT_MIRUNI}
           />
         </FolderEntry>
       </div>

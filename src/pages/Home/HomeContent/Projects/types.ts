@@ -18,6 +18,7 @@ export interface ProjectTechnology {
 export interface ProjectDetails {
   name: string;
   url: string;
+  role: string;
   dates: string;
   description: string;
   screenshots: {

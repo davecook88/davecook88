@@ -3,10 +3,12 @@ import { ComponentType, JSX } from "preact";
 import { FileContentName, FileContentNames } from "./types";
 import { MeJson } from "./MeJson";
 import { AboutMeContent } from "./AboutHtml";
+import { MiruniProject } from "./MiruniProject";
 
 const FileContentComponents: Record<FileContentName, ComponentType> = {
   [FileContentNames.ME_JSON]: MeJson,
   [FileContentNames.ABOUT]: AboutMeContent,
+  [FileContentNames.PROJECT_MIRUNI]: MiruniProject,
 };
 
 export const FileContentDisplay = () => {
