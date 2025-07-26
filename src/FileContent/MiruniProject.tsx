@@ -3,6 +3,60 @@ import ScreenshotCarousel from "#/components/Screenshot/ScreenshotCarousel";
 import { MiruniProject as projectData } from "#/pages/Home/HomeContent/Projects/data/miruni";
 import { TECHNOLOGIES } from "#/pages/Home/HomeContent/Projects/technologyList";
 import { ProjectDetails } from "#/pages/Home/HomeContent/Projects/types";
+import { TSTypeHover } from "#/components/EditorLayout/misc/TSTypeHover";
+
+const ProjectDetailsTypeInfo = () => (
+  <div>
+    <span className="text-syntax-keyword">type</span>{" "}
+    <span className="text-syntax-class">ProjectDetails</span> = {"{"}
+    <div className="pl-4">
+      <div>
+        <span className="text-syntax-property">name</span>:{" "}
+        <span className="text-syntax-primitive">string</span>;
+      </div>
+      <div>
+        <span className="text-syntax-property">url</span>:{" "}
+        <span className="text-syntax-primitive">string</span>;
+      </div>
+      <div>
+        <span className="text-syntax-property">role</span>:{" "}
+        <span className="text-syntax-primitive">string</span>;
+      </div>
+      <div>
+        <span className="text-syntax-property">dates</span>:{" "}
+        <span className="text-syntax-primitive">string</span>;
+      </div>
+      <div>
+        <span className="text-syntax-property">description</span>:{" "}
+        <span className="text-syntax-primitive">string</span>;
+      </div>
+      <div>
+        <span className="text-syntax-property">screenshots</span>: {"{"}
+        <div className="pl-4">
+          <div>
+            <span className="text-syntax-property">src</span>:{" "}
+            <span className="text-syntax-primitive">string</span>;
+          </div>
+          <div>
+            <span className="text-syntax-property">alt</span>:{" "}
+            <span className="text-syntax-primitive">string</span>;
+          </div>
+          <div>
+            <span className="text-syntax-property">description</span>:{" "}
+            <span className="text-syntax-primitive">string</span>;
+          </div>
+        </div>
+        {"}[]"};
+      </div>
+      <div>
+        <span className="text-syntax-property">technologies</span>:{" "}
+        <span className="text-syntax-type">ProjectTechnology</span>
+        [];
+      </div>
+    </div>
+    {"}"}
+  </div>
+);
 
 const MiruniProjectFile: FC = () => {
   const technologiesByCategory = projectData.technologies.reduce(
@@ -27,7 +81,11 @@ const MiruniProjectFile: FC = () => {
 
       <div className="mb-4">
         <span className="text-syntax-keyword">const</span>{" "}
-        <span className="text-syntax-class">Project</span> = {"{"}
+        <span className="text-syntax-primitive">Project:</span>{" "}
+        <TSTypeHover typeName="ProjectDetails">
+          <ProjectDetailsTypeInfo />
+        </TSTypeHover>{" "}
+        = {"{"}
       </div>
 
       <div className="pl-6 space-y-2">
