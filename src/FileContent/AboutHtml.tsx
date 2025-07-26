@@ -38,6 +38,11 @@ const CollapsibleSection = ({ title, children, defaultOpen = false }) => {
 };
 
 export const AboutMeContent = () => {
+  const yearsOfExperience = () => {
+    const startYear = 2020;
+    const currentYear = new Date().getFullYear();
+    return currentYear - startYear;
+  };
   return (
     <div class="p-4">
       <CollapsibleSection title="Summary" defaultOpen={true}>
@@ -53,11 +58,33 @@ export const AboutMeContent = () => {
             </tr>
             <tr>
               <td class="font-semibold text-gray-300">Experience:</td>
-              <td class="text-gray-200">5+ years</td>
+              <td class="text-gray-200">{yearsOfExperience()}+ years</td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-gray-300">Hometown:</td>
+              <td class="text-gray-200">
+                <a
+                  href="https://www.google.com/maps/place/Stourbridge,+UK"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-accent-500 hover:text-accent-600"
+                >
+                  Stourbridge, UK 🇬🇧
+                </a>
+              </td>
             </tr>
             <tr>
               <td class="font-semibold text-gray-300">Location:</td>
-              <td class="text-gray-200">Mexico</td>
+              <td class="text-gray-200">
+                <a
+                  href="https://www.google.com/maps/place/Tula+de+Allende,+Mexico"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-accent-500 hover:text-accent-600"
+                >
+                  Tula de Allende, Mexico 🇲🇽
+                </a>
+              </td>
             </tr>
             <tr>
               <td class="font-semibold text-gray-300">Languages:</td>
