@@ -97,27 +97,28 @@ const MiruniProjectFile: FC = () => {
             rel="noopener noreferrer"
             className="text-syntax-string hover:underline"
           >
-            `{projectData.name}`
+            "{projectData.name}"
           </a>
           ,
         </div>
         <div>
           <span className="text-syntax-property">timeline</span>:{" "}
-          <span className="text-syntax-string">`{projectData.dates}`</span>,
+          <span className="text-syntax-string">"{projectData.dates}"</span>,
         </div>
         <div>
           <span className="text-syntax-property">role</span>:{" "}
-          <span className="text-syntax-string">`{projectData.role}`</span>,
+          <span className="text-syntax-string">"{projectData.role}"</span>,
         </div>
         <div>
           <span className="text-syntax-property">href</span>:{" "}
           <a href={projectData.url} target="_blank" rel="noopener noreferrer">
-            <span className="text-syntax-string">`{projectData.url}`</span>
+            <span className="text-syntax-string">"{projectData.url}"</span>
           </a>
           ,
         </div>
         <div>
           <span className="text-syntax-property">description</span>: (
+          <span className="text-syntax-string">`</span>
           <div className="text-syntax-string leading-relaxed">
             {projectData.description.split("\n\n").map((p, i) => (
               <p key={i} className="mb-2">
@@ -125,7 +126,7 @@ const MiruniProjectFile: FC = () => {
               </p>
             ))}
           </div>
-          ),
+          <span className="text-syntax-string">`</span>),
         </div>
 
         <div className="pt-4">

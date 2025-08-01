@@ -145,7 +145,7 @@ export const TECHNOLOGIES: TechnologyInfo[] = [
   {
     name: TechnologyName.FULLCALENDAR,
     label: "FullCalendar",
-    logo: "https://fullcalendar.io/assets/logo-fresh-33937c426dce3d93cb860f98af388512eb42c2e7a19f65c7a4b503d3e9215fcf.svg",
+    logo: "https://fullcalendar.io/docs/dist/7d1b800c8515be9b4183.png",
   },
   {
     name: TechnologyName.VITE,

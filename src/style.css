@@ -36,6 +36,7 @@
   --color-syntax-type: #6ee7b7; /* emerald-300 */
   --color-syntax-property: #60a5fa; /* blue-400 */
   --color-syntax-string: #fb923c; /* orange-400 */
+  --color-syntax-number: #f87171; /* red-400 */
   --color-syntax-primitive: #fde047; /* yellow-300 */
 
   /* Updated animations */
