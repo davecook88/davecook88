@@ -33,5 +33,13 @@ interface FileLogoProps {
 export const FileLogo: FC<FileLogoProps> = ({ fileName }) => {
   const extension = getExtension(fileName);
   const LogoComponent = logoMap[extension];
-  return LogoComponent && <LogoComponent />;
+  const logoStyle = { minWidth: "16px", minHeight: "16px" }; // Set minimum size
+
+  return (
+    LogoComponent && (
+      <div style={logoStyle}>
+        <LogoComponent />
+      </div>
+    )
+  );
 };

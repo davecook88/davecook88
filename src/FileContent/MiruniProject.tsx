@@ -81,7 +81,7 @@ const MiruniProjectFile: FC = () => {
 
       <div className="mb-4">
         <span className="text-syntax-keyword">const</span>{" "}
-        <span className="text-syntax-primitive">Project:</span>{" "}
+        <span className="text-syntax-primitive">miruniProject:</span>{" "}
         <TSTypeHover typeName="ProjectDetails">
           <ProjectDetailsTypeInfo />
         </TSTypeHover>{" "}

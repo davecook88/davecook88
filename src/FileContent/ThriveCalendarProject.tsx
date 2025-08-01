@@ -27,7 +27,8 @@ const ThriveCalendarProjectFile: FC = () => {
 
       <div className="mb-4">
         <span className="text-syntax-keyword">const</span>{" "}
-        <span className="text-syntax-primitive">project</span> = {"{"}
+        <span className="text-syntax-primitive">thriveCalendarProject</span> ={" "}
+        {"{"}
       </div>
 
       <div className="pl-6 space-y-2">

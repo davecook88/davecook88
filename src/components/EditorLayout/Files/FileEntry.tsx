@@ -11,12 +11,14 @@ export const FileEntry: FC<{
   const { setCurrentContent } = useContentStore();
   return (
     <div
-      class="flex items-center space-x-2 text-gray-400 hover:text-white transition cursor-pointer"
+      class="flex items-center space-x-2 text-gray-400 hover:text-white transition cursor-pointer overflow-hidden"
       aria-label={fileName}
       onClick={() => setCurrentContent(currentContent)}
     >
       <FileLogo fileName={fileName} />
-      <span>{fileName}</span>
+      <span className="overflow-hidden text-ellipsis whitespace-nowrap">
+        {fileName}
+      </span>
     </div>
   );
 };
