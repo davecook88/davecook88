@@ -7,6 +7,7 @@ export const FileContentNames: Record<string, FileContentNameWithExt> = {
   ME_JSON: "me.json",
   ABOUT: "about.html",
   PROJECT_MIRUNI: "miruni-project.ts",
+  PROJECT_THRIVE_CALENDAR: "thrive-calendar-project.js",
 } as const;
 
 export type FileContentName =

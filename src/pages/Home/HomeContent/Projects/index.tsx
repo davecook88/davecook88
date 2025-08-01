@@ -1,8 +1,9 @@
 import { MiruniProject } from "./data/miruni";
+import { ThriveCalendarProject } from "./data/thriveCalendar";
 import { ProjectSummary } from "./ProjectSummary";
 import { Collapsible } from "#/components/Collapsible";
 
-const projectsDetails = [MiruniProject];
+const projectsDetails = [MiruniProject, ThriveCalendarProject];
 
 export const ProjectsContent = () => {
   return (

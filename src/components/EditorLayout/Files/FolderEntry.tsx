@@ -44,7 +44,7 @@ export const FolderEntry: FC<{
         <span>{folderName}</span>
       </div>
       <div
-        class={`overflow-hidden transition-all duration-300 ease-in-out  pl-8 ${
+        class={`overflow-hidden transition-all duration-300 ease-in-out flex flex-col gap-2 pl-8 ${
           isCollapsed ? "max-h-0 py-0" : "h-full py-2"
         }`}
       >

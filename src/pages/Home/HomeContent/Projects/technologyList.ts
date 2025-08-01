@@ -51,6 +51,8 @@ export enum TechnologyName {
   RUBY = "Ruby",
   SWIFT = "Swift",
   JAVA = "Java",
+  LIT = "Lit",
+  FULLCALENDAR = "FullCalendar",
 }
 
 export interface TechnologyInfo {
@@ -134,6 +136,21 @@ export const TECHNOLOGIES: TechnologyInfo[] = [
     name: TechnologyName.NEXTJS,
     label: "Next.js",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  },
+  {
+    name: TechnologyName.LIT,
+    label: "Lit",
+    logo: "https://lit.dev/images/logo.svg",
+  },
+  {
+    name: TechnologyName.FULLCALENDAR,
+    label: "FullCalendar",
+    logo: "https://fullcalendar.io/assets/logo-fresh-33937c426dce3d93cb860f98af388512eb42c2e7a19f65c7a4b503d3e9215fcf.svg",
+  },
+  {
+    name: TechnologyName.VITE,
+    label: "Vite",
+    logo: "https://vitejs.dev/logo.svg",
   },
   // ...add more as needed, following the pattern above
 ];

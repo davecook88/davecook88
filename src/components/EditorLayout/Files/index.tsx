@@ -19,6 +19,10 @@ export const FilesSection = () => {
             fileName={FileContentNames.PROJECT_MIRUNI}
             currentContent={FileContentNames.PROJECT_MIRUNI}
           />
+          <FileEntry
+            fileName={FileContentNames.PROJECT_THRIVE_CALENDAR}
+            currentContent={FileContentNames.PROJECT_THRIVE_CALENDAR}
+          />
         </FolderEntry>
       </div>
     </MenuSection>
