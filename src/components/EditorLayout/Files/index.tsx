@@ -1,14 +1,9 @@
-import { JSONFileLogo } from "#/components/Logos/json-file";
-import { useContentStore } from "#/store/content-store";
-import { HtmlLogo } from "#/components/Logos/html";
 import { MenuSection } from "../MenuSection";
 import { FileEntry } from "./FileEntry";
 import { FolderEntry } from "./FolderEntry";
 import { FileContentNames } from "#/FileContent/types";
-import { TypescriptLogo } from "#/components/Logos/typescript";
 
 export const FilesSection = () => {
-  const { setCurrentContent } = useContentStore();
   return (
     <MenuSection title="Dave Cook">
       <div className="p-2 flex flex-col space-y-2 text-sm">
@@ -18,10 +13,12 @@ export const FilesSection = () => {
           <FileEntry
             fileName={FileContentNames.PROJECT_MIRUNI}
             currentContent={FileContentNames.PROJECT_MIRUNI}
+            key={FileContentNames.PROJECT_MIRUNI}
           />
           <FileEntry
             fileName={FileContentNames.PROJECT_THRIVE_CALENDAR}
             currentContent={FileContentNames.PROJECT_THRIVE_CALENDAR}
+            key={FileContentNames.PROJECT_THRIVE_CALENDAR}
           />
         </FolderEntry>
       </div>

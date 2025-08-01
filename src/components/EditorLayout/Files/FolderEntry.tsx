@@ -1,12 +1,8 @@
 import { FolderLogo } from "#/components/Logos/folder";
-import { FileContentName } from "#/FileContent/types";
-import { useContentStore } from "#/store/content-store";
-import { JSX } from "preact";
 import { FC, useState } from "preact/compat";
 
 export const FolderEntry: FC<{
   folderName: string;
-  children: JSX.Element;
 }> = ({ folderName, children }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
